@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>小手机 · 夜书房</title>
+<link rel="stylesheet" href="css/tokens.css?v=20260818k">
+<link rel="stylesheet" href="css/core.css?v=20260818k">
+<link rel="stylesheet" href="css/screens.css?v=20260818k">
+</head>
+<body>
+
+<div class="phone" id="phone">
+  <div class="wallpaper"></div><div class="texture"></div><div class="grain"></div><div class="vignette"></div>
+  <div class="island"></div>
+  <div class="statusbar">
+    <span class="time" id="clock">23:41</span>
+    <span class="icons">
+      <svg class="sig" width="17" height="10" viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="6" rx="1"/><rect x="10" y="2.5" width="3" height="8.5" rx="1"/><rect x="15" y="0" width="3" height="11" rx="1" opacity=".3"/></svg>
+      <svg class="wifi" width="15" height="10" viewBox="0 0 16 11"><path d="M8 11 L5.6 8.6 a3.4 3.4 0 0 1 4.8 0 Z"/><path d="M3.2 6.2 a6.8 6.8 0 0 1 9.6 0 L11.4 7.6 a4.8 4.8 0 0 0 -6.8 0 Z" opacity=".8"/><path d="M.8 3.8 a10.2 10.2 0 0 1 14.4 0 L13.8 5.2 a8.2 8.2 0 0 0 -11.6 0 Z" opacity=".55"/></svg>
+      <svg class="batt" width="24" height="12" viewBox="0 0 25 12"><rect class="case" x=".5" y=".5" width="21" height="11" rx="3.5"/><rect class="tip" x="22.5" y="4" width="2" height="4" rx="1"/><rect class="lvl" x="2" y="2" width="15" height="8" rx="2"/></svg>
+    </span>
+  </div>
+  <div class="homebar" onclick="go('home')"></div>
+
+  <!-- ════════ 主屏 ════════ -->
+  <section class="screen active" id="home">
+    <div class="clock-zone">
+      <div class="clock" id="clock2">23:41</div>
+      <div class="k date">七月三十日 · 星期四</div>
+      <div class="wordline">今日落笔 <b>2,314</b> 字</div>
+      <div class="resume" onclick="go('write')">
+        <div class="rq"><span id="resumeQuote">「拨出去只需要一秒，但那一秒里装着太多他还没想好措辞的夜晚。」</span></div>
+        <div class="rmeta"><span class="k">正在写</span><span>落潮之城 · 第十二章</span><span class="arrow">→</span></div>
+      </div>
+    </div>
+    <div class="app-grid">
+      <div class="app-ico" onclick="go('wshelf')"><div class="tile jade"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="10.5" y="1.8" width="3" height="8.4" rx="1.5"/><path d="M12 11.4 C14.1 12.4 15.2 14.2 14.9 16.1 C14.6 17.9 13.4 19.5 12 20.9 C10.6 19.5 9.4 17.9 9.1 16.1 C8.8 14.2 9.9 12.4 12 11.4 Z"/></svg></div><div class="lbl">写作</div></div>
+      <div class="app-ico" onclick="go('feed')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><circle cx="7.2" cy="15.6" r="3.4"/><circle cx="16.8" cy="15.6" r="3.4"/></svg></div><div class="lbl">浮生记</div></div>
+      <div class="app-ico" onclick="go('golive')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><circle class="fill" cx="12" cy="12" r="1.7"/><path d="M8.2 15.8 a5.4 5.4 0 0 1 0-7.6 M15.8 8.2 a5.4 5.4 0 0 1 0 7.6 M5.4 18.6 a9.4 9.4 0 0 1 0-13.2 M18.6 5.4 a9.4 9.4 0 0 1 0 13.2"/></svg></div><div class="lbl">直播</div></div>
+      <div class="app-ico" onclick="go('chatlist')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.5 c4.8 0 8.5 3.1 8.5 7 s-3.7 7-8.5 7 c-1 0-2-.13-2.9-.38 L5.5 19.5 l.9-3.2 C4.6 15 3.5 13.4 3.5 11.5 c0-3.9 3.7-7 8.5-7 Z"/></svg></div><div class="lbl">聊天</div></div>
+      <div class="app-ico" onclick="go('shelf')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 6.2 C10.4 4.9 8.2 4.3 5.3 4.3 c-.5 0-.8.4-.8.9 v12 c0 .5.4.9.9.9 2.7 0 4.9.6 6.6 1.9 1.7-1.3 3.9-1.9 6.6-1.9 .5 0 .9-.4.9-.9 v-12 c0-.5-.3-.9-.8-.9 -2.9 0-5.1.6-6.7 1.9 Z M12 6.2 v13.6"/></svg></div><div class="lbl">阅读</div></div>
+      <div class="app-ico" onclick="go('music')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9.5 18.5 V6.2 l9-2.4 V16"/><circle cx="7" cy="18.5" r="2.4"/><circle cx="16" cy="16" r="2.4"/></svg></div><div class="lbl">音乐</div></div>
+      <div class="app-ico" onclick="go('games')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 7.5 C5 6.1 6.1 5 7.5 5 C8.9 5 10 6.1 10 7.5 V16.5 C10 17.9 8.9 19 7.5 19 C6.1 19 5 17.9 5 16.5 Z"/><path d="M7.5 5 H16.8 C18 5 19 6 19 7.2 V16.8 C19 18 18 19 16.8 19 H7.5"/><path d="M13 9.6 h3 M13 13 h3"/></svg></div><div class="lbl">话本</div></div>
+      <div class="app-ico" onclick="go('contacts')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.5"/><path d="M5.2 19.5 c0-3.5 3-5.6 6.8-5.6 s6.8 2.1 6.8 5.6"/></svg></div><div class="lbl">书中人</div></div>
+      <div class="app-ico" onclick="go('help')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M9.5 9.3 C9.5 7.9 10.6 6.9 12 6.9 s2.5 1 2.5 2.4 c0 1.9-2.5 2-2.5 3.8"/><circle class="fill" cx="12" cy="16.6" r="1.1"/></svg></div><div class="lbl">问津</div></div>
+      <div class="app-ico" onclick="go('binding')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M9 3.5 v6.5 l2.5-1.9 2.5 1.9 v-6.5"/></svg></div><div class="lbl">装帧</div></div>
+      <div class="app-ico" onclick="go('settings')"><div class="tile"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 7.5 h9 M17 7.5 h3 M4 16.5 h3 M11 16.5 h9"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="9" cy="16.5" r="2.2"/></svg></div><div class="lbl">设置</div></div>
+    </div>
+    <div class="dock pane">
+      <div class="app-ico" onclick="go('wshelf')"><div class="tile jade"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="10.5" y="1.8" width="3" height="8.4" rx="1.5"/><path d="M12 11.4 C14.1 12.4 15.2 14.2 14.9 16.1 C14.6 17.9 13.4 19.5 12 20.9 C10.6 19.5 9.4 17.9 9.1 16.1 C8.8 14.2 9.9 12.4 12 11.4 Z"/></svg></div></div>
+      <div class="app-ico" onclick="go('chatlist')"><div class="tile"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 4.5 c4.8 0 8.5 3.1 8.5 7 s-3.7 7-8.5 7 c-1 0-2-.13-2.9-.38 L5.5 19.5 l.9-3.2 C4.6 15 3.5 13.4 3.5 11.5 c0-3.9 3.7-7 8.5-7 Z"/></svg></div></div>
+      <div class="app-ico" onclick="go('contacts')"><div class="tile"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.5"/><path d="M5.2 19.5 c0-3.5 3-5.6 6.8-5.6 s6.8 2.1 6.8 5.6"/></svg></div></div>
+      <div class="app-ico" onclick="go('settings')"><div class="tile"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 7.5 h9 M17 7.5 h3 M4 16.5 h3 M11 16.5 h9"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="9" cy="16.5" r="2.2"/></svg></div></div>
+    </div>
+  </section>
+
+  <!-- ════════ 写作：书架 + 素材库 ════════ -->
+  <section class="screen" id="wshelf">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      写作
+    </div>
+    <div class="scroll">
+      <div class="seg" style="margin:0 0 16px"><div class="on" onclick="wtab(this,'wbooks')">书架</div><div onclick="wtab(this,'wassets')">素材库</div></div>
+      <div id="wbooks">
+        <div class="field" style="margin:0 0 12px"><input id="shelfSearch" placeholder="搜索书名"></div>
+        <div class="shelf" id="shelfList"></div>
+        <div style="margin-top:12px"><span class="ghost" onclick="Writing.exportTxt()">导出当前书 TXT</span></div>
+      </div>
+      <div id="wassets" style="display:none">
+        <div class="field" style="margin:0 0 12px"><input id="assetSearch" placeholder="搜索素材"></div>
+        <div class="subtabs"><div class="on" onclick="atab(this,'aop')">开头</div><div onclick="atab(this,'awb')">世界书</div><div onclick="atab(this,'achar')">人物</div></div>
+        <div id="aop">
+          <div class="card" style="border-style:dashed;background:none;text-align:center;cursor:pointer" onclick="Openings.openNew()"><div class="sub" style="margin:0">＋ 新建开头</div></div>
+          <div id="opGroup"></div>
+        </div>
+        <div id="awb" style="display:none">
+          <div class="card" style="border-style:dashed;background:none;text-align:center;cursor:pointer" onclick="WB.createNew()"><div class="sub" style="margin:0">＋ 新建世界书</div></div>
+          <div id="wbGroup"></div>
+        </div>
+        <div id="achar" style="display:none">
+          <div class="card"><h4><span class="avatar" style="width:24px;height:24px;font-size:11px;border-radius:7px">满</span>书中人<span class="src plum" style="margin-left:auto">U6 通电</span></h4><div class="sub">人物是全机共用的素材，这里只是个门。</div><div style="margin-top:10px"><span class="ghost" onclick="go('contacts')">去书中人</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sheet" id="booksheet" style="top:14%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>新建书</h3>
+      <div class="note">选个开头带着世界开写；或手写开局；或什么都不填从零开始。开局文本会成为这本书的第一段。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="field" style="margin-top:0"><label>书名</label><input id="nbTitle" placeholder="给这本书起个名"></div>
+        <div class="field"><label>关联开头 · 可选，选中即预填下方</label><div class="chips" id="nbOpChips"></div></div>
+        <div class="field"><label>开局形式 · 二选一</label><div class="seg" id="nbMode" style="margin-top:2px"><div class="on">开场内容</div><div>开场指令</div></div><div id="nbModeHint" style="margin-top:7px;font-family:var(--song);font-size:11.5px;color:var(--text-3);line-height:1.8"></div></div>
+        <div class="field"><label>开局文本 · 可留空</label><textarea id="nbOpen" style="width:100%;min-height:84px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none" placeholder="故事的第一段，或第一条指令…"></textarea></div>
+        <div class="field"><label>世界书 · 可选</label><div class="chips" id="nbWbChips"></div></div>
+      </div>
+      <div style="margin-top:12px;flex-shrink:0"><button class="btn" onclick="Writing.createBook()">建好开写</button></div>
+    </div>
+    <div class="sheet" id="opsheet" style="top:18%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>新建开头</h3>
+      <div class="note">开头＝可复用的开局素材：一段开场文本＋关联世界书。开书时选它即整包带入。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="field" style="margin-top:0"><label>名称</label><input id="opName" placeholder="比如：落潮的雨夜"></div>
+        <div class="field"><label>形式</label><div class="seg" id="opMode" style="margin-top:2px"><div class="on">开场内容</div><div>开场指令</div></div><div id="opModeHint" style="margin-top:7px;font-family:var(--song);font-size:11.5px;color:var(--text-3);line-height:1.8"></div></div>
+        <div class="field"><label>开场文本</label><textarea id="opText" style="width:100%;min-height:96px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none" placeholder="雨夜的便利店屋檐下…"></textarea></div>
+        <div class="field"><label>关联世界书 · 可选</label><div class="chips" id="opWbChips"></div></div>
+      </div>
+      <div style="margin-top:12px;flex-shrink:0"><button class="btn" onclick="Openings.saveFromForm()">保存开头</button></div>
+    </div>
+  </section>
+
+  <!-- 写作：新建书流程 -->
+  <section class="screen" id="newbook">
+    <div class="app-head">
+      <span class="back" onclick="go('wshelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      新建书
+      <span class="spacer"></span>
+      <span class="note">三步开书</span>
+    </div>
+    <div class="scroll">
+      <div class="mem"><div class="idx"><span class="dot plum"></span>开头 · 落潮的雨夜<span class="src plum">已载入</span></div><div class="detail" style="display:block">开头就是下面三块的整包：世界、人物、背景。在这里的修改会写回这个开头本体；想留原样，请先在素材库给它创建副本。</div></div>
+      <div class="k" style="margin:18px 2px 10px">一 · 世 界</div>
+      <div class="mem"><div class="idx"><span class="dot jade"></span>汐州世界书<span class="src jade">快照 · 6 条目</span></div><div class="detail" style="display:block"><span class="ghost" style="padding:3px 11px" onclick="go('wbedit')">编辑条目</span><span class="ghost" style="padding:3px 11px;margin-left:6px">换一部</span><span class="ghost" style="padding:3px 11px;margin-left:6px">新建世界书</span></div></div>
+      <div class="k" style="margin:18px 2px 10px">二 · 人 物</div>
+      <div class="mem"><div class="idx"><span class="avatar" style="width:24px;height:24px;font-size:11px;border-radius:7px">满</span>小满<span class="src" style="margin-left:auto">移除</span></div></div>
+      <div class="mem"><div class="idx"><span class="avatar yu" style="width:24px;height:24px;font-size:11px;border-radius:7px">聿</span>沈聿<span class="src" style="margin-left:auto">移除</span></div></div>
+      <div class="mem" style="border-style:dashed;text-align:center"><div class="idx" style="justify-content:center;color:var(--text-3);font-weight:400">＋ 从书中人添加</div></div>
+      <div class="k" style="margin:18px 2px 10px">三 · 背 景 · 此 刻 的 局 面</div>
+      <div class="mem"><div class="idx">背景<span class="src" style="margin-left:auto">编辑</span></div><div class="detail" style="display:block">两人尚未相识。小满刚到汐州气象台实习，沈聿守着唱片店第三年。梅雨第四十一天，台风「白鸦」逼近，全城汛期戒备。雨停之前，总得有一个人先开口。</div></div>
+      <div style="margin-top:18px"><button class="btn" onclick="go('write')">开写</button><span class="ghost" style="margin-left:9px" onclick="go('wshelf')">取消</span></div>
+    </div>
+  </section>
+
+  <!-- ════════ 写作：编辑器 ════════ -->
+  <section class="screen" id="write">
+    <div class="app-head">
+      <span class="back" onclick="go('wshelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl" id="wtitle">落潮之城</span>
+      <span class="src amber" id="wmock" style="display:none;cursor:pointer" onclick="go('settings')">演示通道</span>
+      <span class="tool" onclick="Writing.openCards()">设定</span>
+      <span class="tool" onclick="go('log')">日志</span>
+    </div>
+    <div class="gauge min" onclick="this.classList.toggle('min')">
+      <span class="k">水位</span>
+      <div class="bar"><i class="inj" style="width:0"></i><i class="prose" id="gaugeFill" style="width:0"></i></div>
+      <span class="note" id="gaugeNote">还没落笔</span>
+      <span class="ghost" id="digestBtn" style="padding:2px 10px;font-size:10px;flex-shrink:0" onclick="event.stopPropagation();Writing.openDigest()">前情提要</span>
+    </div>
+    <div class="scroll">
+      <div class="batchbar" id="batchbar">
+        <span id="bbCount">已选 0</span>
+        <span class="ghost" style="padding:3px 12px;margin-left:auto" onclick="Writing.batchAll()">全选</span>
+        <span class="ghost" style="padding:3px 12px;margin-left:6px;color:var(--danger)" id="bbDel" onclick="Writing.batchDel()">删除</span>
+        <span class="ghost" style="padding:3px 12px;margin-left:6px" onclick="Writing.batchExit()">完成</span>
+      </div>
+      <div id="wstream"></div>
+    </div>
+    <!-- 回溯二次确认 -->
+    <div class="sheet auto" id="backsheet">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>回溯到这条指令</h3>
+      <div class="note">它之后的正文与指令都会被删除，只能去日志里翻。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="anno-quote" id="rbQuote"></div>
+        <button class="btn" onclick="Writing.confirmRollback()">确认回溯</button>
+        <span class="ghost" style="margin-left:9px" onclick="document.getElementById('backsheet').classList.remove('show')">取消</span>
+      </div>
+    </div>
+    <div class="copill" onclick="document.getElementById('cosheet').classList.add('show')">
+      <span class="avatar">满</span>
+      <span class="ctxt">她这时候肯定不敢接电话，我懂她。要不让沈聿先发条消息试探？</span>
+      <span class="cnew"></span>
+      <span class="fold" onclick="event.stopPropagation();this.closest('.copill').style.display='none';document.getElementById('codot').style.display='flex'"><svg width="12" height="7" viewBox="0 0 13 8"><path d="M1.5 1.5 6.5 6l5-4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <!-- 头像态：比胶囊更小，多随行叠显，点开直接半窗 -->
+    <div class="codot" id="codot" onclick="document.getElementById('cosheet').classList.add('show')">
+      <span class="avatar">满</span><span class="avatar yu">聿</span>
+    </div>
+    <!-- 随行展开：评论流+闲聊（grab上拉=全窗吸附顶栏下，下拉/轻点=收起） -->
+    <div class="sheet" id="cosheet">
+      <div class="grab"></div>
+      <h3 style="display:flex;align-items:center">随行闲谈<span class="src jade" style="margin-left:auto;cursor:pointer;letter-spacing:.05em" onclick="const off=this.textContent.includes（'关'）;this.textContent=off?'自动点评 · 开':'自动点评 · 关';this.classList.toggle('jade')">自动点评 · 开</span><span class="src" style="margin-left:8px;cursor:pointer;letter-spacing:.05em">管理</span></h3>
+      <div class="note">评论与你们的对话都不会进入续写上下文；人物互动的窗口与写作分开计算。</div>
+      <div style="overflow-y:auto;flex:1;padding:2px 2px 0">
+        <div class="bubble-row" onclick="this.classList.toggle('sel')"><span class="avatar">满</span><div class="msg"><span class="qref" onclick="event.stopPropagation();document.getElementById('cosheet').classList.remove('show')">最后他只是把手机倒扣在掌心，像按住一枚不肯安静的硬币。</span>她这时候肯定不敢接电话，我懂她。要不让沈聿先发条消息试探？</div><span class="iops" onclick="event.stopPropagation()"><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M2.2 11.8l.7-2.9 7.2-7.2 2.2 2.2-7.2 7.2-2.9.7z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></span></div>
+        <div class="bubble-row" onclick="this.classList.toggle('sel')"><span class="avatar yu">聿</span><div class="msg">……我拒绝发消息，我要再攥一会儿硬币。</div><span class="iops" onclick="event.stopPropagation()"><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M2.2 11.8l.7-2.9 7.2-7.2 2.2 2.2-7.2 7.2-2.9.7z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></span></div>
+        <div class="bubble-row me" onclick="this.classList.toggle('sel')"><span class="iops" onclick="event.stopPropagation()"><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M2.2 11.8l.7-2.9 7.2-7.2 2.2 2.2-7.2 7.2-2.9.7z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></span><div class="msg">你现在对这个剧情的感觉如何？</div></div>
+        <div class="bubble-row" onclick="this.classList.toggle('sel')"><span class="avatar">满</span><div class="msg">心跳有点快。那个未接来电她能盯一晚上——但你要是敢写她主动回拨，我就当场罢工（认真脸）</div><span class="iops" onclick="event.stopPropagation()"><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M2.2 11.8l.7-2.9 7.2-7.2 2.2 2.2-7.2 7.2-2.9.7z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></span></div>
+        <div class="bubble-row sel" onclick="this.classList.toggle('sel')"><span class="avatar yu">聿</span><div class="msg"><span class="qref gone">原文已被作者删除 · 聊过的还作数，原文找不回了</span>……那段被你删了？行吧，就当我什么都没吐槽过。</div><span class="iops" onclick="event.stopPropagation()"><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M12.2 7A5.2 5.2 0 1 1 10.4 3M12.2 1.4v3h-3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><svg width="12" height="12" viewBox="0 0 14 14"><path d="M2.2 11.8l.7-2.9 7.2-7.2 2.2 2.2-7.2 7.2-2.9.7z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></span></div>
+      </div>
+      <div class="inputbar pane" style="position:static;margin-top:12px;flex-shrink:0;align-items:flex-end">
+        <span class="who" style="align-self:center">闲聊</span>
+        <textarea rows="1" placeholder="问问他们对剧情的想法…" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,96)+'px'"></textarea>
+        <button class="send">发送</button>
+      </div>
+    </div>
+    <div class="inputbar pane">
+      <span class="who">指令</span>
+      <input id="cmdInput" placeholder="接下来写什么…" />
+      <span class="exp" onclick="document.getElementById('cmdfull').classList.add('show')"><svg width="13" height="13" viewBox="0 0 14 14"><path d="M8.7 1.5h3.8v3.8M5.3 12.5H1.5V8.7M12.5 1.5 8.2 5.8M1.5 12.5l4.3-4.3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+      <button class="send" onclick="Writing.drop()">落笔</button>
+    </div>
+    <div class="sheet auto" id="wbpick">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>更换世界书</h3>
+      <div class="note">换书只改关联，不动世界书本体；换完清一次缓存属预期。</div>
+      <div class="chips" id="wbPickChips" style="margin:4px 0 10px"></div>
+    </div>
+    <!-- 前情提要：查看/编辑/重做 -->
+    <div class="sheet" id="digestsheet" style="top:30%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>前情提要</h3>
+      <div class="note">正文逼近压缩窗口时，最早的一段会被并成这份提要拼进模板；被压的原文永远还在页面里。改完记得保存。</div>
+      <textarea id="digestText" style="flex:1;border:1px solid var(--line);border-radius:var(--r);background:var(--panel-3);padding:12px 14px;font-family:var(--song);font-size:12.5px;line-height:2;color:var(--text);outline:none;resize:none" placeholder="还没有提要——正文没到压缩线。"></textarea>
+      <div style="margin-top:12px;flex-shrink:0"><button class="btn" onclick="Writing.saveDigest()">保存</button><span class="ghost" style="margin-left:8px" onclick="Writing.redoDigest()">重新归纳</span></div>
+    </div>
+    <!-- 卡片全屏编辑（指令与正文通用） -->
+    <div class="cmdfull" id="editfull">
+      <div class="app-head">
+        <span class="back" onclick="document.getElementById('editfull').classList.remove('show')"><svg width="16" height="9" viewBox="0 0 17 10"><path d="M1.5 1.5 8.5 8l7-6.5" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="ttl">编 辑</span>
+        <span class="tool" onclick="Writing.saveEdit()">保存</span>
+      </div>
+      <textarea id="editText" style="font-family:var(--song);line-height:2.1"></textarea>
+      <div class="cnt">编辑只动当前这张卡</div>
+    </div>
+    <!-- 指令全屏编辑（仅写文指令可全屏，随行闲聊不做，防小窗套小窗） -->
+    <div class="cmdfull" id="cmdfull">
+      <div class="app-head">
+        <span class="back" onclick="document.getElementById('cmdfull').classList.remove('show')"><svg width="16" height="9" viewBox="0 0 17 10"><path d="M1.5 1.5 8.5 8l7-6.5" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="ttl">指 令</span>
+        <span class="tool" onclick="Writing.dropFull()">落笔</span>
+      </div>
+      <textarea id="cmdFullText" placeholder="接下来写什么…长指令在这里慢慢写"></textarea>
+      <div class="cnt">0 / 5000</div>
+    </div>
+  </section>
+
+  <!-- 写作：记忆冲突确认 -->
+
+  <!-- 写作：设定库 -->
+  <section class="screen" id="cards">
+    <div class="app-head">
+      <span class="back" onclick="go('write')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      设定库
+      <span class="spacer"></span>
+      <span class="tool">导出</span>
+    </div>
+    <div class="scroll">
+      <div style="font-size:11px;letter-spacing:.05em;color:var(--text-3);margin:0 2px 4px">自上而下，就是每次落笔拼进模板的顺序。</div>
+      <div class="setflow">
+        <section>
+          <div class="shead">① 文 风 · 写 作 指 令<span class="sv">全局</span></div>
+          <textarea data-k="tpl.global" id="tplText" placeholder="每次续写垫底的那段话。"></textarea>
+          <div class="chips" id="tplChips" style="margin-top:9px"></div>
+          <div style="margin-top:9px"><span class="ghost" onclick="Writing.tplSaveStart()">存为预设</span><span class="ghost" style="margin-left:8px" onclick="Writing.tplReset()">恢复默认</span><span class="hint" id="tplMsg" style="margin-left:10px"></span></div>
+          <div class="field" id="tplSaveRow" style="display:none;margin-top:10px">
+            <input id="tplName" placeholder="给这套文风起个名">
+            <div style="margin-top:9px"><button class="btn" onclick="Writing.tplSaveDo()">保存预设</button><span class="ghost" style="margin-left:8px" onclick="Writing.tplSaveCancel()">取消</span></div>
+          </div>
+        </section>
+        <section>
+          <div class="shead">② 世 界 书<span class="sv" id="cardsWbCount"></span></div>
+          <div class="hint"><b id="cardsWbName">未关联世界书</b> · 通用描述与启用词条全量拼入</div>
+          <div style="margin-top:9px"><span class="ghost" onclick="Writing.editBookWb()">去编辑</span><span class="ghost" style="margin-left:8px" onclick="Writing.changeWb()">更换</span></div>
+        </section>
+        <section>
+          <div class="shead">③ 人 物<span class="sv">本书</span></div>
+          <textarea id="castText" placeholder="人物名：身份、性格、与主角的关系…整段拼入模板；U6 书中人通电后升级为结构化档案"></textarea>
+        </section>
+        <section>
+          <div class="shead">④ 前 情 提 要<span class="sv">自动压缩产物</span></div>
+          <div class="hint" id="digestMeta">正文还没到压缩线，暂无提要。</div>
+          <div style="margin-top:9px"><span class="ghost" id="digestBtn2" onclick="Writing.openDigest()">查看与编辑</span></div>
+        </section>
+        <section>
+          <div class="shead">窗 口 与 压 缩<span class="sv" style="color:var(--text-3)">机制 · 不拼入</span></div>
+          <div class="field"><label>自动压缩窗口<span class="val" id="cwinLbl"></span></label><input type="range" min="30" max="95" step="5" value="80" data-k="write.cpct"></div>
+          <div class="field"><label>压缩比例<span class="val" id="ratioLbl"></span></label><input type="range" min="20" max="80" value="50" data-k="write.ratio"></div>
+          <div class="field"><label>写作输出预留<span class="val">TOKENS</span></label><input value="5000" data-k="write.reserve"></div>
+          <div class="hint">窗口跟着设置里主模型的上下文上限走；触发时只把最早一段并成提要，最近的正文永远保留原文。输出预留同时是随行对话的活动池。</div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- 写作：全局日志 -->
+  <section class="screen" id="log">
+    <div class="app-head">
+      <span class="back" onclick="go('write')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      请求日志
+      <span class="spacer"></span>
+      <span class="note">最近 200 条</span>
+    </div>
+    <div class="scroll">
+      <div class="filters"><span class="fchip on">全部</span><span class="fchip">写作</span><span class="fchip">聊天</span><span class="fchip">浮生记</span><span class="fchip">直播</span><span class="fchip">阅读</span><span class="fchip" style="color:var(--danger)">仅报错</span></div>
+      <div class="card log-item err">
+        <div class="row1"><span>21:20</span><span class="src amber">轻量</span><span class="src">浮生记</span><span class="src err">失败 · 429</span></div>
+        <div class="instr">周边广告图 ×2 → 生图接口</div>
+        <div class="resp" style="font-family:var(--mono);font-size:11px">429 Too Many Requests — {"error":{"message":"Rate limit exceeded, retry after 20s"}} · 已自动降速，重试 1/3</div>
+        <div class="acts"><span class="ghost">复制完整报错</span><span class="ghost" style="margin-left:8px">重试</span></div>
+      </div>
+      <div class="card log-item">
+        <div class="row1"><span>21:18</span><span class="src jade">主力</span><span class="src">写作</span><span>第十二章</span></div>
+        <div class="instr">继续写，侧重他犹豫要不要打电话…</div>
+        <div class="resp">手机在口袋里硌着掌心。他数了三遍屏幕亮起又暗下去的时间……</div>
+        <div class="acts"><span class="ghost">展开全文</span><span class="ghost" style="margin-left:8px">复制响应</span></div>
+      </div>
+      <div class="card log-item">
+        <div class="row1"><span>21:16</span><span class="src jade">主力</span><span class="src">写作</span><span>第十二章 · 已刷掉</span></div>
+        <div class="instr">继续写，侧重他犹豫要不要打电话…</div>
+        <div class="resp">他掏出手机，几乎是赌气一样按下了拨号键。铃声只响了半声就被他掐断——</div>
+        <div class="acts"><span class="ghost">展开全文</span><span class="ghost" style="margin-left:8px">复制响应</span></div>
+      </div>
+      <div class="card log-item">
+        <div class="row1"><span>21:03</span><span class="src jade">主力</span><span class="src">聊天</span><span>小满</span></div>
+        <div class="instr">对话轮 · 注入记忆索引 3 条 + 详情 1 条</div>
+        <div class="resp">哼，那下一章我要求出太阳。对了，那个未接来电……你打算写他重新拨吗？</div>
+        <div class="acts"><span class="ghost">展开全文</span><span class="ghost" style="margin-left:8px">复制响应</span></div>
+      </div>
+      <div class="card log-item">
+        <div class="row1"><span>20:52</span><span class="src amber">轻量</span><span class="src">浮生记</span><span>批量生成</span></div>
+        <div class="instr">第十一章完结 → 生成角色帖子 ×6 + 评论</div>
+        <div class="resp" style="font-family:var(--mono);font-size:11px">{"posts":[{"author":"小满","title":"今天预报又双叒叕不准"…</div>
+        <div class="acts"><span class="ghost">展开全文</span><span class="ghost" style="margin-left:8px">复制响应</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════ 浮生记 ════════ -->
+  <section class="screen" id="feed">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      浮生记
+      <span class="spacer"></span>
+      <span class="tool" onclick="go('covers')">模板 · 临时</span>
+    </div>
+    <div class="scroll">
+      <div class="feed">
+        <div class="post"><div class="cover w-plum"><span class="eyebrow">第十一章 · 派生</span>今天预报<br>又双叒叕不准</div><div class="meta">被淋成落汤鸡但心情很好，谁懂<div class="who" onclick="event.stopPropagation();go('cprofile')"><span class="avatar">满</span>小满<span class="likes">赞 32</span></div></div></div>
+        <div class="post"><div class="cover scene-sky"><span class="loc">汐州 · 傍晚</span></div><div class="meta">下班路上的天，像有人打翻了汽水<div class="who"><span class="avatar yu">聿</span>沈聿<span class="likes">赞 17</span></div></div></div>
+        <div class="post" onclick="go('ad')"><div class="cover ad-stage">🧸</div><div class="meta">「小满」手办 · 梅雨季限定<div class="who">汐州周边铺<span class="ad-tag" style="margin-left:auto">广告</span></div></div></div>
+        <div class="post" onclick="go('postdetail')"><div class="cover w-jade vert"><span class="eyebrow">深夜贴</span><span class="vtxt">失眠的人不许听雨声</span></div><div class="meta">凌晨三点的关东煮是合法的吧<div class="who"><span class="avatar yu">聿</span>沈聿<span class="likes">赞 41</span></div></div></div>
+        <div class="post"><div class="cover w-amber quote"><span class="eyebrow">碎碎念</span>「水塔背后，是我的秘密基地。才不告诉你们在哪个天台。」</div><div class="meta">谁问都不说，问就是保密条例<div class="who"><span class="avatar">满</span>小满<span class="likes">赞 58</span></div></div></div>
+        <div class="post"><div class="cover scene-rain"><span class="loc">汐州 · 雨</span></div><div class="meta">落潮的时候，整座城市都在换气<div class="who"><span class="avatar">满</span>小满<span class="likes">赞 23</span></div></div></div>
+      </div>
+    </div>
+    <div class="ftab"><div class="on">发现</div><div class="fplus" onclick="go('compose')"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1.2 V12.8 M1.2 7 H12.8" fill="none"/></svg></div><div onclick="go('feedme')">我的</div></div>
+  </section>
+
+  <!-- 浮生记：发帖 第一步（全屏写想法） -->
+  <section class="screen" id="compose">
+    <div class="app-head" style="border-bottom:none">
+      <span class="back" onclick="go('feed')" style="font-family:var(--sans);font-size:17px;letter-spacing:0">✕</span>
+      <span class="spacer"></span>
+      <button class="btn" style="padding:8px 20px" onclick="go('composecover')">下一步</button>
+    </div>
+    <div class="scroll" style="display:flex;flex-direction:column">
+      <div style="font-family:var(--song);font-size:20px;font-weight:700;letter-spacing:.14em;margin:6px 2px 14px">写想法</div>
+      <textarea placeholder="说点什么…角色们会来评论" style="flex:1;min-height:300px;border:none;outline:none;background:none;resize:none;font-family:var(--song);font-size:15.5px;line-height:2.1;color:var(--text)">今天路过昼夜便利店，关东煮的萝卜卖完了。</textarea>
+      <div class="note" style="font-size:10.5px;color:var(--text-3);text-align:right;font-variant-numeric:tabular-nums">19 / 2000</div>
+    </div>
+  </section>
+
+  <!-- 浮生记：发帖 第二步（封面渲染） -->
+  <section class="screen" id="composecover">
+    <div class="app-head" style="border-bottom:none">
+      <span class="back" onclick="go('compose')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      选封面
+      <span class="spacer"></span>
+      <button class="btn" style="padding:8px 20px" onclick="go('feed')">发布</button>
+    </div>
+    <div class="scroll" style="display:flex;flex-direction:column;align-items:center">
+      <div class="post" style="width:78%;cursor:default;margin-top:8px"><div class="cover w-jade vert" style="min-height:0;aspect-ratio:3/4"><span class="eyebrow">碎碎念</span><span class="vtxt">关东煮的萝卜卖完了</span></div></div>
+      <div class="k" style="margin:20px 0 12px;align-self:flex-start">换 封 面 样 式</div>
+      <div style="display:flex;gap:10px;overflow-x:auto;width:100%;padding-bottom:6px">
+        <div style="flex-shrink:0;width:64px;aspect-ratio:3/4;border-radius:8px;border:1.5px solid var(--jade);background:var(--panel-2);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.1em;color:var(--jade)">竖排</div>
+        <div style="flex-shrink:0;width:64px;aspect-ratio:3/4;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.1em;color:var(--text-3)">信笺</div>
+        <div style="flex-shrink:0;width:64px;aspect-ratio:3/4;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.1em;color:var(--text-3)">稿纸</div>
+        <div style="flex-shrink:0;width:64px;aspect-ratio:3/4;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.1em;color:var(--text-3)">日签</div>
+        <div style="flex-shrink:0;width:64px;aspect-ratio:3/4;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.1em;color:var(--text-3)">底纹字</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 浮生记：封面模板打样 -->
+  <section class="screen" id="covers">
+    <div class="app-head">
+      <span class="back" onclick="go('feed')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      封面模板
+      <span class="spacer"></span>
+      <span class="note">打样 · 十六式 × 八色池</span>
+    </div>
+    <div class="scroll">
+      <div class="feed">
+        <div class="post"><div class="xc xc-t1 xp-zhu"><span class="xr"></span><div class="xin"><div class="xttl">落潮之后见</div></div><span class="xseal">满</span></div></div>
+        <div class="post"><div class="xc xc-t2 xp-gao"><span class="xflag"></span><div class="xin"><div class="xttl">今夜有雨不打伞</div></div><div class="xsig">浮生记</div></div></div>
+        <div class="post"><div class="xc xc-t5 xp-ye"><div class="xin"><div class="xk">深 夜 贴</div><div class="xttl">失眠的人不许听雨声</div><div class="xg"></div></div><div class="xsig">沈聿</div></div></div>
+        <div class="post"><div class="xc xc-t9 xp-zhu"><div class="xhead">汐州晚报<small>七月卅一</small></div><div class="xin"><div class="xttl">预报又双叒叕不准</div><div class="xcols">据本台观测，梅雨第四十一天仍无停意。气象台实习生表示心情意外不错，理由不明。市民沈某称已习惯……</div></div></div></div>
+        <div class="post"><div class="xc xc-t7 xp-hu"><span class="xb"></span><span class="xh"><i></i><i></i><i></i><i></i></span><div class="xin"><div class="xttl">凌晨三点的关东煮</div><div class="xsub">合法的吧？合法的吧。</div></div></div></div>
+        <div class="post"><div class="xc xc-t15 xp-mo"><div class="xin"><div class="xk">灯 下</div><div class="xttl">写到这里想你</div><div class="xhr"></div></div><div class="xsig">执笔人</div></div></div>
+        <div class="post"><div class="xc xc-t12 xp-yue"><span class="xperf"></span><div class="xin"><div class="xttl">见字如面，勿念。</div></div><span class="xst"><span>汐州</span><span>七月卅一</span></span></div></div>
+        <div class="post"><div class="xc xc-t6 xp-gao"><span class="xnums"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span></span><span class="xr2"></span><div class="xin"><div class="xttl">第十二章，卡住了<span class="xcur"></span></div></div></div></div>
+        <div class="post"><div class="xc xc-t13 xp-lan"><div class="xspine"><span>浮生记 · 卷二</span></div><div class="xin"><div class="xttl">水塔背后的秘密基地</div></div><div class="xsig">小满</div></div></div>
+        <div class="post"><div class="xc xc-t8 xp-ou"><span class="xfr"></span><div class="xin"><div class="xk">扉 页</div><div class="xttl">雨停之前</div><div class="xhr"></div><div class="xsub">谁也别说话</div></div></div></div>
+        <div class="post"><div class="xc xc-t16 xp-hu"><div class="xin"><div class="xk">目 录</div><div class="xttl" style="font-size:7.4cqw;-webkit-line-clamp:1">落潮生活月刊</div><div class="xtoc"><div>雨天观测法<i></i><b>03</b></div><div>关东煮报告<i></i><b>07</b></div><div>未接来电考<i></i><b>11</b></div></div></div></div></div>
+        <div class="post"><div class="xc xc-t18 xp-zhu"><div class="xin"><div class="xk">校 样</div><div class="xttl"><span class="xstrike">今天不想</span>写稿</div><div class="xsub">红笔说：要写。</div></div><span class="xmark">改</span></div></div>
+        <div class="post"><div class="xc xc-t17 xp-ye"><span class="xfr"></span><span class="xno">NO.041</span><div class="xin"><div class="xk">藏 书 票</div><div class="xttl" style="font-size:8.6cqw">借书不还者</div><div class="xsub">榜上有名</div></div></div></div>
+        <div class="post"><div class="xc xc-t19 xp-yue"><span class="xtop"></span><span class="xno2">XZ-037</span><div class="xin"><div class="xttl" style="font-size:8.6cqw">未接来电考</div><div class="xsub">索引：天台 · 雨 · 硬币</div></div><span class="xholes"><i></i><i></i></span></div></div>
+        <div class="post"><div class="xc xc-t20 xp-ou"><div class="xin"><div class="xk">版 权 页</div><div class="xttl" style="font-size:8cqw">落潮之城</div></div><div class="xfine">著者：执笔人　初版：梅雨季<br>印数：一册　定价：无价<br>本书角色均已知情并同意出演</div></div></div>
+        <div class="post"><div class="xc xc-t10 xp-gao"><span class="xtape"></span><div class="xnote"><div class="xttl">明天想去海边</div><div class="xsub">带上伞，和你。</div></div></div></div>
+      </div>
+      <div class="card" style="margin-top:6px">
+        <div class="k" style="margin-bottom:8px">移植说明</div>
+        <div class="sub" style="margin:0">移植十六式：立轴 / 稿纸 / 夜书房 / 报纸 / 活页 / 灯下 / 信笺 / 打字机 / 书脊 / 扉页 / 目录 / 校样 / 藏书票 / 索引卡 / 版权页 / 便签。<b>配色改为独立八色池</b>（浅深各半，UGC 多样感，不随装帧换色——待你确认这个取向）；生成时版式按标题字数挑、配色随机但相邻不重。源系统 22×22 与混搭台在 xhs-covers/。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 浮生记：我的 -->
+  <section class="screen" id="feedme">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      浮生记
+    </div>
+    <div class="scroll">
+      <div style="display:flex;gap:15px;align-items:center;margin:8px 4px 0">
+        <span class="avatar" style="width:62px;height:62px;font-size:26px;border-radius:16px;color:var(--text)">笔</span>
+        <div style="flex:1;min-width:0">
+          <div style="font-family:var(--song);font-size:17px;letter-spacing:.1em;font-weight:600">执笔人</div>
+          <div style="font-family:var(--song);font-size:12px;color:var(--text-2);letter-spacing:.08em;margin-top:6px">《落潮之城》连载中 · 汐州在住</div>
+        </div>
+        <span class="ghost" style="padding:7px 9px;display:flex" onclick="document.getElementById('fmsheet').classList.add('show')"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M4 7.5 h9 M17 7.5 h3 M4 16.5 h3 M11 16.5 h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="15" cy="7.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="16.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+      </div>
+      <div class="statline"><span><b>2</b>关注</span><span><b>171</b>获赞</span><span><b>12</b>赞过</span></div>
+      <div class="ptabs"><span>帖子</span><span class="on">赞过</span></div>
+      <div class="feed">
+        <div class="post"><div class="cover w-amber quote"><span class="eyebrow">碎碎念</span>水塔背后，是我的秘密基地。</div><div class="meta">谁问都不说<div class="who"><span class="avatar">满</span>小满<span class="likes">赞 58</span></div></div></div>
+        <div class="post"><div class="cover w-jade vert"><span class="eyebrow">深夜贴</span><span class="vtxt">失眠的人不许听雨声</span></div><div class="meta">凌晨三点的关东煮是合法的吧<div class="who"><span class="avatar yu">聿</span>沈聿<span class="likes">赞 41</span></div></div></div>
+      </div>
+    </div>
+    <div class="ftab"><div onclick="go('feed')">发现</div><div class="fplus" onclick="go('compose')"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1.2 V12.8 M1.2 7 H12.8" fill="none"/></svg></div><div class="on">我的</div></div>
+    <div class="sheet auto" id="fmsheet">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>浮生记设置</h3>
+      <div class="note">只管这个圈子的事，不劳设置 APP 大驾。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="mem"><div class="idx"><span class="avatar" style="width:36px;height:36px;font-size:15px;border-radius:11px;color:var(--text)">笔</span><div style="flex:1;min-width:0"><div>头像</div><div style="font-size:10.5px;color:var(--text-3);font-weight:400;margin-top:3px">点这行直接换</div></div><span style="color:var(--text-3);font-size:14px">›</span></div></div>
+        <div class="mem"><div class="idx">昵称<span style="margin-left:auto;font-family:var(--song);font-weight:500">执笔人</span></div></div>
+        <div class="mem"><div class="idx"><div style="flex:1;min-width:0"><div>周边广告</div><div style="font-size:10.5px;color:var(--text-3);font-weight:400;margin-top:3px">在发现页混入角色周边卡片</div></div><div class="seg" style="width:140px;margin-top:0;flex-shrink:0"><div class="on">开</div><div>关</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 浮生记：帖子详情 -->
+  <section class="screen" id="postdetail">
+    <div class="app-head">
+      <span class="back" onclick="go('feed')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="avatar yu" style="width:28px;height:28px;font-size:12px;border-radius:8px">聿</span>
+      <span class="ttl" style="font-size:14.5px;letter-spacing:.08em">沈聿</span>
+      <span class="ghost" style="padding:4px 13px">关注中</span>
+    </div>
+    <div class="scroll" style="padding-bottom:120px">
+      <div class="post" style="cursor:default"><div class="cover w-jade vert" style="min-height:210px"><span class="eyebrow">深夜贴</span><span class="vtxt">失眠的人不许听雨声</span></div></div>
+      <p class="para" style="font-size:14.5px;line-height:2.1;margin-top:14px">凌晨三点的关东煮是合法的吧。店长今天多给了一颗萝卜，我怀疑他也失眠。雨声这种东西，听一分钟是气氛，听三个小时是审讯。</p>
+      <div style="display:flex;align-items:center;margin:4px 2px 0">
+        <span style="font-size:10.5px;letter-spacing:.1em;color:var(--text-3)">来自 第十一章 · 派生</span>
+        <span style="margin-left:auto;display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums"><svg width="13" height="12" viewBox="0 0 11 10"><path d="M5.5 9.5 C2 6.8.5 4.8.5 3 A2.5 2.5 0 0 1 5.5 1.6 A2.5 2.5 0 0 1 10.5 3 C10.5 4.8 9 6.8 5.5 9.5 Z" fill="var(--jade)"/></svg>41</span>
+      </div>
+      <div style="height:1px;background:var(--line);margin:16px 0 14px"></div>
+      <div class="k" style="margin:0 2px 14px">共 3 条评论</div>
+      <div class="cmt"><span class="avatar" style="width:28px;height:28px;font-size:12px;border-radius:9px">满</span><div class="cbody"><div class="cname">小满</div><div class="ctext">关东煮同好会 +1。萝卜是店长的求救信号。</div><div class="cmeta">昨天 23:40 · 回复</div></div></div>
+      <div class="cmt"><span class="avatar" style="width:28px;height:28px;font-size:12px;border-radius:9px;color:var(--text)">笔</span><div class="cbody"><div class="cname">执笔人 <span class="src jade" style="margin-left:4px">你</span></div><div class="ctext">你们俩要不要考虑同一时刻出现在便利店。</div><div class="cmeta">昨天 23:52 · 回复</div>
+        <div class="cmt" style="margin:12px 0 0"><span class="avatar yu" style="width:22px;height:22px;font-size:10px;border-radius:7px">聿</span><div class="cbody"><div class="cname">沈聿 <span style="color:var(--text-3)">回复</span> 你</div><div class="ctext">请不要在评论区剧透。</div><div class="cmeta">昨天 23:58 · 回复</div></div></div>
+      </div></div>
+    </div>
+    <div class="inputbar pane">
+      <input placeholder="说点什么…角色会回你"/>
+      <button class="send">送出</button>
+    </div>
+  </section>
+
+  <!-- 浮生记：角色主页 -->
+  <section class="screen" id="cprofile">
+    <div class="app-head">
+      <span class="back" onclick="go('feed')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      小满
+    </div>
+    <div class="scroll">
+      <div style="display:flex;gap:15px;align-items:center;margin:8px 4px 0">
+        <span class="avatar" style="width:62px;height:62px;font-size:26px;border-radius:16px">满</span>
+        <div style="flex:1;min-width:0">
+          <div style="font-family:var(--song);font-size:17px;letter-spacing:.1em;font-weight:600">小满</div>
+          <div style="font-family:var(--song);font-size:12px;color:var(--text-2);letter-spacing:.08em;margin-top:6px">气象台实习生 · 汐州在住</div>
+        </div>
+        <button class="btn" style="padding:7px 16px;font-size:12px">已关注</button>
+      </div>
+      <div class="statline"><span><b>34</b>帖子</span><span><b>892</b>获赞</span><span><b>1</b>粉丝</span></div>
+      <div class="ptabs"><span class="on">帖子</span></div>
+      <div class="feed">
+        <div class="post"><div class="cover w-plum"><span class="eyebrow">第十一章 · 派生</span>今天预报<br>又双叒叕不准</div><div class="meta">被淋成落汤鸡但心情很好，谁懂<div class="who"><span class="avatar">满</span>小满<span class="likes">赞 32</span></div></div></div>
+        <div class="post"><div class="cover scene-rain"><span class="loc">汐州 · 雨</span></div><div class="meta">落潮的时候，整座城市都在换气<div class="who"><span class="avatar">满</span>小满<span class="likes">赞 23</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 广告落地页 -->
+  <section class="screen" id="ad">
+    <div class="app-head">
+      <span class="back" onclick="go('feed')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      周边详情
+    </div>
+    <div class="scroll">
+      <div class="ad-hero">🧸</div>
+      <div class="card">
+        <h4>「小满」手办 · 梅雨季限定</h4>
+        <div class="sub">由角色形象生成的手办设计图。可以在这里生成三视图，拿去 3D 打印做成实物。</div>
+        <div style="margin-top:14px;display:flex;gap:9px;align-items:center;flex-wrap:wrap">
+          <button class="btn">下载设计图</button>
+          <span class="ghost">生成三视图</span>
+          <span class="ghost">换个款式</span>
+        </div>
+        <div class="sub" style="margin-top:10px;color:var(--text-3)">不想看广告？在浮生记「我的」里可以关掉。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 聊天 ════════ -->
+  <section class="screen" id="chatlist">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      聊天
+      <span class="spacer"></span>
+      <span class="tool" onclick="go('newchar')">＋ 联系人</span>
+    </div>
+    <div class="scroll">
+      <div class="card chat-item" onclick="go('chat')">
+        <span class="avatar">满</span>
+        <div class="col"><div class="name">小满</div><div class="last">你昨天那章为什么给我写淋雨啊喂！</div></div>
+        <div class="time">21:02</div>
+      </div>
+      <div class="card chat-item">
+        <span class="avatar yu">聿</span>
+        <div class="col"><div class="name">沈聿</div><div class="last">……那通电话，你打算让我什么时候打出去？</div></div>
+        <div class="time">昨天</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="chat">
+    <div class="app-head">
+      <span class="back" onclick="go('chatlist')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      小满
+      <span class="spacer"></span>
+      <span class="tool" onclick="document.getElementById('personasheet').classList.add('show')">人格 · 主</span>
+      <span class="tool" onclick="document.getElementById('memsheet').classList.add('show')">记忆</span>
+    </div>
+    <div class="scroll" style="padding-top:16px">
+      <div class="bubble-row"><span class="avatar">满</span><div class="msg">你昨天那章为什么给我写淋雨啊喂！我一个气象台的自己被淋，很没面子诶 (´･ω･`)</div></div>
+      <div class="bubble-row me"><div class="msg">因为淋雨的你比较可爱（认真</div></div>
+      <div class="bubble-row"><span class="avatar">满</span><div class="msg">哼，那下一章我要求出太阳。对了，那个未接来电……你打算写他重新拨吗？我有点紧张。</div></div>
+    </div>
+    <div class="inputbar pane">
+      <input placeholder="和小满说点什么…"/>
+      <button class="send">送出</button>
+    </div>
+
+    <div class="sheet" id="memsheet">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>小满的记忆</h3>
+      <div class="note">索引层全部注入 · 详情按相关性自动展开 · 点击条目可查看和编辑<br>主人格记得一切；切到故事人格时，可选是否带上此前的聊天。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="mem" onclick="this.classList.toggle('open')"><div class="idx">第十一章 · 天台的未接来电<span class="src amber">写作</span></div><div class="detail">我在天台躲雨的时候收到了一条未接来电提示，是沈聿打来的。只响了半声。我盯着看了很久，心情意外地好。</div></div>
+        <div class="mem" onclick="this.classList.toggle('open')"><div class="idx">和作者聊过「怕不怕打雷」<span class="src amber">聊天</span></div><div class="detail">作者问过我怕不怕打雷。我说气象台实习生怕打雷像厨师怕火。其实有一点怕，但没说。</div></div>
+        <div class="mem" onclick="this.classList.toggle('open')"><div class="idx">共读《长夜航线》至第 37 章<span class="src amber">阅读</span></div><div class="detail">正在和作者一起读《长夜航线》。目前读到第 37 章，主角刚发现船长的日志是伪造的。后面的别剧透！</div></div>
+      </div>
+    </div>
+
+    <!-- 人格切换抽屉 -->
+    <div class="sheet" id="personasheet" style="top:38%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>切换人格</h3>
+      <div class="note">记忆永远都在索引里；带不带上，只是这一次切换的选择。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="mem" style="border-color:color-mix(in srgb,var(--jade) 45%,transparent);background:color-mix(in srgb,var(--jade) 7%,var(--panel-2))">
+          <div class="idx"><span class="dot jade"></span>主人格 · 综合体<span class="src jade">当前</span></div>
+          <div class="detail" style="display:block">本我 + 所有书的侧写 + 全部记忆，她经历过的一切都在。</div>
+        </div>
+        <div class="mem">
+          <div class="idx"><span class="dot plum"></span>落潮之城 · 故事人格<span class="ghost" style="margin-left:auto;padding:4px 14px;color:var(--jade);border-color:color-mix(in srgb,var(--jade) 40%,transparent)" onclick="document.getElementById('personasheet').classList.remove('show')">切换</span></div>
+          <div class="detail" style="display:block">该书侧写 + 该书记忆，视角聚焦在故事当下。
+            <div style="display:flex;align-items:center;margin-top:5px;font-size:10px;letter-spacing:.04em;color:var(--text-3)">带上此前记忆<div class="seg" style="margin-left:auto;width:90px;margin-top:0;flex-shrink:0;border-radius:7px"><div class="on" style="padding:2px 0;font-size:10px">带</div><div style="padding:2px 0;font-size:10px">不带</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 直播：开播配置 -->
+  <section class="screen" id="golive">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      直播
+    </div>
+    <div class="scroll">
+      <div class="k" style="margin:4px 2px 12px">主 播 · 点 头 像 换 场</div>
+      <div style="display:flex;gap:26px;margin:0 4px 20px">
+        <div style="text-align:center">
+          <span style="position:relative;display:inline-block"><span class="avatar" style="width:54px;height:54px;font-size:23px;border-radius:50%;outline:2px solid var(--jade);outline-offset:3px">满</span><i style="position:absolute;right:1px;bottom:2px;width:11px;height:11px;border-radius:50%;background:#35C76F;border:2px solid var(--panel)"></i></span>
+          <div style="font-size:11px;letter-spacing:.1em;margin-top:7px">小满</div>
+          <span class="ghost" style="padding:3px 12px;font-size:10px;margin-top:7px;display:inline-block" onclick="go('vcall')">通话</span>
+        </div>
+        <div style="text-align:center;opacity:.55">
+          <span style="position:relative;display:inline-block"><span class="avatar yu" style="width:54px;height:54px;font-size:23px;border-radius:50%">聿</span><i style="position:absolute;right:1px;bottom:2px;width:11px;height:11px;border-radius:50%;background:var(--text-3);border:2px solid var(--panel)"></i></span>
+          <div style="font-size:11px;letter-spacing:.1em;margin-top:7px">沈聿</div>
+          <div style="font-size:9.5px;color:var(--text-3);margin-top:7px">未设音色</div>
+        </div>
+      </div>
+      <div class="seg" style="margin:0 0 14px"><div class="on" onclick="gtab(this,'gLive')">当前直播</div><div onclick="gtab(this,'gReplay')">历史回放</div></div>
+      <div id="gLive">
+        <div class="lc" onclick="go('live')">
+          <div class="in">
+            <div class="lk">互动文字冒险 · 第 3 节</div>
+            <div class="lttl">雾港旅人</div>
+            <div class="op hot"><b>一</b>推门进去，亲眼看看声音的来处</div>
+            <div class="op"><b>二</b>折返楼梯，先把门的位置记下来</div>
+            <div class="op"><b>三</b>对着门缝，轻声喊船长的名字</div>
+          </div>
+          <div class="badge"><i></i>直播中 · 续播</div>
+          <div class="host">小满 主播 · 上次播到第 3 节，点开接着看</div>
+        </div>
+        <div class="gcov16" style="aspect-ratio:auto;padding:13px 16px;flex-direction:row;align-items:center;gap:12px;cursor:default">
+          <div style="flex:1;min-width:0"><div style="font-family:var(--song);font-size:14px;letter-spacing:.1em;font-weight:600">落潮的雨夜 · if</div><div class="sub" style="margin-top:4px">自由模式 · 还没生成过</div></div>
+          <span class="ghost" style="flex-shrink:0;color:var(--jade);border-color:color-mix(in srgb,var(--jade) 40%,transparent)">呼唤主播来播</span>
+        </div>
+        <div class="gcov16" style="aspect-ratio:auto;padding:13px 16px;flex-direction:row;align-items:center;gap:12px;cursor:default">
+          <div style="flex:1;min-width:0"><div style="font-family:var(--song);font-size:14px;letter-spacing:.1em;font-weight:600">隋唐 if 集 · 乱世卷</div><div class="sub" style="margin-top:4px">备播中 · 正在生成第一节</div><div class="pbar" style="margin-top:8px;height:3px;border-radius:2px;background:var(--panel-3);overflow:hidden"><i style="display:block;height:100%;width:45%;background:var(--jade)"></i></div></div>
+          <span class="note" style="flex-shrink:0;font-size:10.5px;color:var(--text-3)">45%</span>
+        </div>
+        <div class="gcov16" style="aspect-ratio:auto;border-style:dashed;background:none;align-items:center;justify-content:center;padding:16px" onclick="go('adapt')">
+          <span style="font-size:11px;color:var(--text-3);letter-spacing:.06em">＋ 去改编个新话本备着</span>
+        </div>
+        <div class="sub" style="margin-top:4px;font-family:var(--song);font-size:10.5px;letter-spacing:.06em;color:var(--text-3)">「直播中」永远只有一个：上次没播完的场。想看别的作品就呼唤主播，后台排队生成好即可开播。换主播，列表换成他的作品。</div>
+      </div>
+      <div id="gReplay" style="display:none">
+        <div class="rcov">
+          <span class="rk2">文 字 冒 险</span>
+          <div class="rt">雾港旅人 · 第 1–3 节</div>
+          <div class="rovl"></div>
+          <div class="rfoot"><span class="ri">昨夜 23:17 · 24 分钟 · 弹幕 47</span><span class="rbtn">重演</span><span class="rbtn">删除</span></div>
+        </div>
+        <div class="rcov">
+          <span class="rk2">电 台 闲 聊</span>
+          <div class="rt">雨夜闲聊</div>
+          <div class="rovl"></div>
+          <div class="rfoot"><span class="ri">前夜 22:03 · 9 分钟 · 弹幕 12</span><span class="rbtn">重演</span><span class="rbtn">删除</span></div>
+        </div>
+        <div class="sub" style="text-align:center;margin-top:10px;font-family:var(--song);letter-spacing:.08em;font-size:10.5px;color:var(--text-3)">存脚本与当场封面 · 保留 20 场<br>语音有缓存，重演命中即播 · 仅久未播被淘汰的旧句才补合成</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 直播：视频通话 -->
+  <section class="screen" id="vcall">
+    <div class="stage" style="background:radial-gradient(110% 62% at 50% 78%, #1E2620 0%, #12161A 52%, #0B0E12 100%)"></div>
+    <div style="position:absolute;top:70px;left:0;right:0;text-align:center;z-index:15;font-size:11px;letter-spacing:.2em;color:#9AA0A8">视频通话 · 00:42</div>
+    <div class="streamer" style="bottom:auto;top:200px;width:132px;height:132px">满</div>
+    <div class="subtitle" style="bottom:auto;top:390px">「喂？这么晚打来，是第十二章写不下去了吗？」</div>
+    <div style="position:absolute;bottom:54px;left:0;right:0;display:flex;justify-content:center;gap:30px;z-index:20">
+      <div class="vbtn"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4.5 9.5 v5 h3.4 L12.5 18.5 v-13 L7.9 9.5 Z"/><path d="M15.5 9.8 l4.4 4.4 M19.9 9.8 l-4.4 4.4"/></svg></span>静音</div>
+      <div class="vbtn"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="9.2" y="3.8" width="5.6" height="9.2" rx="2.8"/><path d="M6.4 10.8 a5.6 5.6 0 0 0 11.2 0 M12 16.6 V19.6 M9 19.6 h6"/><path d="M5 4.5 L19 18.5"/></svg></span>关麦</div>
+      <div class="vbtn end" onclick="go('golive')"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3.4 13.8 C8.2 9.4 15.8 9.4 20.6 13.8 L18.5 16.8 C17.3 16 16 15.4 14.6 15.1 L14.2 12.4 C12.8 12.1 11.2 12.1 9.8 12.4 L9.4 15.1 C8 15.4 6.7 16 5.5 16.8 Z"/></svg></span>挂断</div>
+    </div>
+  </section>
+
+  <!-- ════════ 直播 ════════ -->
+  <section class="screen" id="live">
+    <div class="stage"></div>
+    <div class="spot"></div>
+    <div class="live-top">
+      <span class="back" onclick="go('golive')" style="cursor:pointer;display:flex;padding:2px 6px 2px 0"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke="#C9C4B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="live-dot"></span>
+      <div><div class="name">小满的深夜文字冒险</div><div class="viewers">1,024 人在看 · 文字游戏《雾港旅人》</div></div>
+    </div>
+    <div class="danmaku">
+      <span class="dm" style="top:8px;animation-delay:0s">主播选左边的门！！</span>
+      <span class="dm" style="top:42px;animation-delay:-3s">这游戏好带感</span>
+      <span class="dm" style="top:76px;animation-delay:-5.5s">小满的声音好好听</span>
+      <span class="dm" style="top:110px;animation-delay:-7s">别进地下室啊啊啊</span>
+    </div>
+    <div class="speak-tags"><span>惊讶</span><span class="on">说话中</span></div>
+    <div class="streamer">满</div>
+    <div class="subtitle">「……门后是一段往下的石阶，火把一盏一盏地灭掉。要跟我一起下去吗？」</div>
+    <div class="chatlog">
+      <div class="cline"><span class="nick">夜航员_07</span>主播选左边的门！！</div>
+      <div class="cline"><span class="nick plum">白鸦过境</span>这游戏好带感，蹲一个通关</div>
+      <div class="cline gift"><span class="nick amber">汐州观测站</span>送出了 一串关东煮 ×3</div>
+      <div class="cline"><span class="nick">潮汐表</span>小满的声音好好听</div>
+      <div class="cline"><span class="nick plum">屋檐下</span>别进地下室啊啊啊啊</div>
+      <div class="cline host"><span class="nick">满 · 主播</span>谢谢关东煮！那我偏要看看地下室里有什么（推门</div>
+    </div>
+    <div class="live-bottom">
+      <div class="fake-in">发个弹幕，主播会念到你…</div>
+      <div class="round"><svg width="16" height="16" viewBox="0 0 17 17"><rect x="2" y="6.5" width="13" height="8.5" rx="1.2"/><path d="M2 10 h13 M8.5 6.5 v8.5 M8.5 6.5 C5.5 6.5 4 3.5 5.8 2.6 c1.4-.7 2.7 1.6 2.7 3.9 c0-2.3 1.3-4.6 2.7-3.9 C13 3.5 11.5 6.5 8.5 6.5 Z"/></svg></div>
+      <div class="round" onclick="togglePip(true)"><svg width="16" height="16" viewBox="0 0 17 17"><rect x="1" y="2.5" width="15" height="12" rx="2.5"/><rect x="8.5" y="8" width="6" height="4.5" rx="1.2" style="fill:#9AA0A8;stroke:none"/></svg></div>
+      <div class="round" onclick="go('home')"><svg width="12" height="12" viewBox="0 0 13 13"><path d="M2 2 l9 9 M11 2 l-9 9"/></svg></div>
+    </div>
+  </section>
+
+  <!-- ════════ 阅读 ════════ -->
+  <section class="screen" id="shelf">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      阅读
+    </div>
+    <div class="scroll">
+      <div class="shelf">
+        <div class="book-cover" onclick="go('reader')">
+          <div class="bt">长夜航线</div>
+          <div class="ba">读到 37 / 112 章</div>
+          <div class="ba" style="color:var(--amber)">小满、沈聿共读中 · 总结至 42 章</div>
+        </div>
+        <div class="upload-slot" onclick="go('parsepre')"><span class="plus">＋</span>上传 TXT<br>自动解码 · 自动切章</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读：上传解析预览 -->
+  <section class="screen" id="parsepre">
+    <div class="app-head">
+      <span class="back" onclick="go('shelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      上传解析
+      <span class="spacer"></span>
+      <span class="note">入库前确认</span>
+    </div>
+    <div class="scroll">
+      <div class="mem"><div class="idx">编码<span class="src jade">GB18030 · 自动识别</span></div><div class="detail" style="display:block">UTF-8 试解失败后回退命中。预览无乱码。</div></div>
+      <div class="mem"><div class="idx">切章<span class="src jade">112 章 · 正则「第X章」</span></div><div class="detail" style="display:block">第一章 出航　·　第二章 货舱里的信　·　第三章 罗盘失灵　……</div></div>
+      <div class="mem"><div class="idx">兜底<span class="src">未启用</span></div><div class="detail" style="display:block">若章节标记识别失败，将按每 3,000 字切章。</div></div>
+      <div class="mem"><div class="idx">谁来共读</div><div class="detail" style="display:block"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"><span class="src jade" style="padding:2px 9px;font-size:10px">满 小满 ✓</span><span class="src jade" style="padding:2px 9px;font-size:10px">聿 沈聿 ✓</span><span class="src" style="padding:2px 9px;font-size:10px">＋ 添加</span></div>读的时候也能随时拉人或请走。</div></div>
+      <div style="margin-top:16px"><button class="btn" onclick="go('reader')">入库开读</button><span class="ghost" style="margin-left:9px" onclick="go('shelf')">重新选择</span></div>
+    </div>
+  </section>
+
+  <section class="screen" id="reader">
+    <div class="app-head">
+      <span class="back" onclick="go('shelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl">第三十七章 · 伪造的日志</span>
+      <span class="tool" onclick="document.getElementById('bookinfosheet').classList.add('show')">37/112 · 共读</span>
+    </div>
+    <div class="scroll">
+      <p class="read-para">林晚把日志摊在海图桌上，指腹压过那行墨迹未干的坐标。船长的字迹她见过上百次——<span class="anno" onclick="document.getElementById('annosheet').classList.add('show')">起笔总带一个多余的顿点，像说谎前的清嗓。<span class="ct">2</span></span></p>
+      <p class="read-para">而这一页，没有。</p>
+      <p class="read-para">"这不是他写的。"她听见自己的声音混在引擎的低鸣里，轻得像怕吵醒什么。</p>
+      <div class="k" style="margin:26px 2px 12px">章 评 · 本 章 2 条</div>
+      <div class="mem"><div class="idx"><span class="avatar" style="width:24px;height:24px;font-size:11px;border-radius:7px">满</span>小满</div><div class="detail" style="display:block">不会吧，日志是假的？！那前面三十六章船长说的话全都要重新想一遍……这章信息量太大了。</div></div>
+      <div class="mem"><div class="idx"><span class="avatar yu" style="width:24px;height:24px;font-size:11px;border-radius:7px">聿</span>沈聿</div><div class="detail" style="display:block">起笔的顿点原来是三十七章才收的伏笔，这作者藏得真深。</div></div>
+    </div>
+
+    <!-- 段评抽屉 -->
+    <div class="sheet" id="annosheet" style="top:36%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>段评 · 2 条</h3>
+      <div class="note">角色读到这句时随手划的线 · 同一句可以有多人多条</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="anno-quote">「起笔总带一个多余的顿点，像说谎前的清嗓。」</div>
+        <div class="mem"><div class="idx"><span class="avatar" style="width:24px;height:24px;font-size:11px;border-radius:7px">满</span>小满</div><div class="detail" style="display:block">说谎前的清嗓！以后观察别人说谎就用这招（记笔记）</div></div>
+        <div class="mem"><div class="idx"><span class="avatar yu" style="width:24px;height:24px;font-size:11px;border-radius:7px">聿</span>沈聿</div><div class="detail" style="display:block">写歌词的时候想偷这句。</div></div>
+      </div>
+    </div>
+    <div class="sheet auto" id="bookinfosheet">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>长夜航线</h3>
+      <div class="note">读到 37 / 112 章 · 总结至 42 章</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="mem"><div class="idx">共读名单</div><div class="detail" style="display:block"><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="src jade" style="padding:2px 9px;font-size:10px">满 小满 ✓</span><span class="src jade" style="padding:2px 9px;font-size:10px">聿 沈聿 ✓</span><span class="src" style="padding:2px 9px;font-size:10px">＋ 拉人</span></div></div></div>
+        <div class="mem"><div class="idx">跳转章节<span class="src" style="margin-left:auto">输入章号</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 书中人 ════════ -->
+  <section class="screen" id="contacts">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      书中人
+      <span class="spacer"></span>
+      <span class="tool">导入人物卡</span>
+    </div>
+    <div class="scroll">
+      <div class="card chat-item" onclick="go('chardetail')">
+        <span class="avatar">满</span>
+        <div class="col"><div class="name">小满</div><div class="last">气象台实习生 · 侧写 2 · 记忆 32 条</div></div>
+      </div>
+      <div class="card chat-item">
+        <span class="avatar yu">聿</span>
+        <div class="col"><div class="name">沈聿</div><div class="last">唱片店店员 · 侧写 2 · 记忆 27 条</div></div>
+      </div>
+      <div class="card" style="border-style:dashed;background:none;text-align:center" onclick="go('newchar')"><div class="sub" style="margin:0">＋ 新建人物 · 或从酒馆 PNG 卡导入（自带立绘图）</div></div>
+    </div>
+  </section>
+
+  <section class="screen" id="chardetail">
+    <div class="app-head">
+      <span class="back" onclick="go('contacts')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      小满
+      <span class="spacer"></span>
+      <span class="tool">导出人设卡</span>
+    </div>
+    <div class="scroll">
+      <div class="card" style="display:flex;align-items:center;gap:14px">
+        <span class="avatar" style="width:58px;height:58px;font-size:25px;border-radius:14px">满</span>
+        <div style="flex:1"><div style="font-family:var(--song);font-size:16px;letter-spacing:.1em">小满</div><div class="sub" style="margin-top:3px">上传图片拖框截取头像 · 导入酒馆卡时自动取立绘</div><div style="margin-top:9px"><span class="ghost" style="padding:4px 12px" onclick="go('crop')">更换形象</span><span class="ghost" style="padding:4px 12px;margin-left:7px" onclick="go('crop')">重新截取</span><span class="ghost" style="padding:4px 12px;margin-left:7px" onclick="document.getElementById('voicesheet').classList.add('show')">语音</span></div></div>
+      </div>
+      <div class="card" style="border-left:2px solid var(--plum)">
+        <h4>本我 · 通用设定<span class="src plum" style="margin-left:8px">女</span><span class="src plum" style="margin-left:auto">跨书共用</span></h4>
+        <div class="sub">23 岁，气象台实习生。相信所有天气预报都是这座城市的心情剧透。语气活泼，怕打雷但嘴硬。</div>
+        <div style="margin-top:10px"><span class="ghost" onclick="go('profileedit')">编辑</span></div>
+      </div>
+      <div class="k" style="margin:18px 2px 10px">各 书 侧 写 · 同 一 个 她 的 不 同 人 生</div>
+      <div class="card"><h4>落潮之城<span class="src jade" style="margin-left:8px">主线</span><span class="src jade" style="margin-left:auto">本书随行 ✓</span></h4><div class="sub">在汐州实习的第一年。未接来电之后心绪不宁，开始留意唱片店的营业时间。随行是这本书的设置，不是全局开关。</div><div style="margin-top:10px"><span class="ghost" onclick="go('profileedit')">编辑</span></div></div>
+      <div class="card" style="border-left:2px solid var(--amber)"><h4>记忆 · 32 条<span class="src amber" style="margin-left:auto">索引全注入</span></h4><div class="sub">写作 24 · 聊天 5 · 阅读 3。聊天时她是「本我 + 各书侧写 + 全部记忆」的综合体。</div><div style="margin-top:10px"><span class="ghost" onclick="go('memedit')">查看与编辑</span></div></div>
+      <div style="margin-top:16px"><button class="btn" onclick="go('chat')">去聊天</button></div>
+    </div>
+    <div class="sheet" id="voicesheet" style="top:38%">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>小满的语音</h3>
+      <div class="note">合成音音色 + TTS 专属音色，调完就收。</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="seg" style="margin-top:2px"><div>正弦</div><div class="on">三角</div><div>方波</div></div>
+        <div class="field"><label>音高</label><input type="range" min="0" max="100" value="68"></div>
+        <div class="field"><label>嘟嘟密度 · 语速</label><input type="range" min="0" max="100" value="55"></div>
+        <div class="field"><label>TTS 音色 ID · 接转语音 API 时使用</label><input placeholder="voice id"></div>
+        <div style="margin-top:14px"><span class="ghost">试听一句</span><button class="btn" style="margin-left:9px" onclick="document.getElementById('voicesheet').classList.remove('show')">完成</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 话本 ════════ -->
+  <section class="screen" id="games">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      话本
+      <span class="spacer"></span>
+      <span class="note">书 · 小说 · 开头，皆可改编</span>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <h4>雾港旅人<span class="src jade" style="margin-left:auto">改编 · 直播同款</span></h4>
+        <div class="sub">改编自《长夜航线》，剧情锚点跟到第 37 章，可偏离原作。存档 2 个。</div>
+        <div style="margin-top:11px"><span class="ghost" onclick="go('gameplay')">继续 · 第三节</span><span class="ghost" style="margin-left:8px">新开局</span><span class="ghost" style="margin-left:8px" onclick="document.getElementById('saves').classList.add('show')">存档</span></div>
+      </div>
+      <div class="card">
+        <h4>落潮的雨夜 · if<span class="src plum" style="margin-left:auto">自由 · 从开头起</span></h4>
+        <div class="sub">从开头「落潮的雨夜」开始自由演，只借世界观和人物，不受原作束缚。存档 1 个。</div>
+        <div style="margin-top:11px"><span class="ghost">继续</span></div>
+      </div>
+      <div class="card" style="border-style:dashed;background:none;text-align:center" onclick="go('adapt')"><div class="sub" style="margin:0">＋ 改编新话本 · 选一本书、一部小说或一个开头<br>没写完的书也能改编到当前进度</div></div>
+      <div class="sub" style="text-align:center;margin-top:12px;font-family:var(--song);letter-spacing:.08em;font-size:10.5px;color:var(--text-3)">直播间里主播玩的，就是这些话本。</div>
+    </div>
+
+    <!-- 存档管理 -->
+    <div class="sheet auto" id="saves">
+      <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+      <h3>雾港旅人 · 存档</h3>
+      <div class="note">每节自动存 · 标注是谁存的</div>
+      <div style="overflow-y:auto;flex:1">
+        <div class="mem"><div class="idx">第三节 · 地下室<span class="src jade">直播 · 小满</span></div><div class="detail" style="display:block">自动存档 · 昨夜 23:41　<span class="ghost" style="padding:3px 11px">读取</span><span class="ghost" style="padding:3px 11px;margin-left:6px">删除</span></div></div>
+        <div class="mem"><div class="idx">第二节 · 甲板<span class="src">你 · 手动</span></div><div class="detail" style="display:block">手动存档 · 昨夜 23:12　<span class="ghost" style="padding:3px 11px">读取</span><span class="ghost" style="padding:3px 11px;margin-left:6px">删除</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 话本：改编配置 -->
+  <section class="screen" id="adapt">
+    <div class="app-head">
+      <span class="back" onclick="go('games')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      改编新话本
+    </div>
+    <div class="scroll">
+      <div class="seg" style="margin:2px 0 10px"><div class="on">我的书</div><div>上传小说</div><div>开头</div></div>
+      <div class="sub" style="margin:0 2px 12px;font-family:var(--song);font-size:11.5px;letter-spacing:.06em;color:var(--text-3)">书与小说走改编模式，锚点跟原作、可偏离；开头走自由模式。生成后与原作独立，玩过的节点永久固化。</div>
+      <div class="mem"><div class="idx"><span class="dot jade"></span>落潮之城<span class="src jade">已选 · 至第 12 章</span></div></div>
+      <div class="mem"><div class="idx"><span class="dot" style="background:var(--text-3)"></span>隋唐 if 集<span class="src">4 章</span></div></div>
+      <div style="margin-top:16px"><button class="btn" onclick="go('games')">生成话本</button><span class="ghost" style="margin-left:9px" onclick="go('games')">取消</span></div>
+    </div>
+  </section>
+
+  <section class="screen" id="gameplay">
+    <div class="app-head">
+      <span class="back" onclick="go('games')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl">雾港旅人</span>
+      <span class="tool" onclick="document.getElementById('saves').classList.add('show')">存档</span>
+      <span class="tool" onclick="document.getElementById('saves').classList.add('show')">读档</span>
+    </div>
+    <div class="scroll">
+      <div class="gsec">一 · 登 船</div>
+      <div class="gnar">木栈道的尽头，雾把船吞了一半。汽笛响过第二遍，检票员的灯在雾里晃成一枚模糊的月亮。</div>
+      <div class="gsay"><span class="avatar">晚</span><div><div class="gwho2">林 晚</div><div class="gtxt">「就是这班船。日志上说的，就是这班。」</div></div></div>
+      <div class="gpick done">
+        <div class="gopt sel"><b>一</b>直接上船</div>
+        <div class="gopt"><b>二</b>在栈道上再等一等</div>
+      </div>
+      <div class="gsec">三 · 地 下 室</div>
+      <div class="gnar">石阶尽头有一扇半开的门，门后传来潮水声——可是这里不该有潮水。</div>
+      <div class="gsay"><span class="avatar">晚</span><div><div class="gwho2">林 晚 · 不 安</div><div class="gtxt">「这里不该有潮水的。」她攥紧了那本伪造的日志。</div></div></div>
+      <div class="gnar">门缝里漏出一线冷光，随着水声一明一暗。</div>
+      <div class="gpick">
+        <div class="gopt"><b>一</b>推门进去，亲眼看看声音的来处</div>
+        <div class="gopt"><b>二</b>折返楼梯，先把门的位置记下来</div>
+        <div class="gopt"><b>三</b>对着门缝，轻声喊船长的名字</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 书中人：头像截取 -->
+  <section class="screen" id="crop">
+    <div class="app-head">
+      <span class="back" onclick="go('chardetail')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      截取头像
+      <span class="spacer"></span>
+      <span class="note">小满</span>
+    </div>
+    <div class="scroll">
+      <div style="position:relative;height:320px;border-radius:var(--r-card);background:linear-gradient(160deg,var(--panel-2),var(--panel-3));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden">
+        <span style="font-family:var(--song);font-size:78px;color:var(--text-3);opacity:.4">立绘</span>
+        <div style="position:absolute;top:52px;left:50%;transform:translateX(-50%);width:150px;height:150px;border:1.5px dashed var(--jade);border-radius:10px"></div>
+        <span class="k" style="position:absolute;bottom:12px;left:0;right:0;text-align:center">拖 动 方 框 · 双 指 缩 放</span>
+      </div>
+      <div style="margin-top:14px"><span class="ghost">用人物卡立绘</span><span class="ghost" style="margin-left:8px">上传新图</span></div>
+      <div style="margin-top:16px"><button class="btn" onclick="go('chardetail')">确认截取</button><span class="ghost" style="margin-left:9px" onclick="go('chardetail')">取消</span></div>
+    </div>
+  </section>
+
+
+  <!-- 表单：世界书条目编辑 -->
+  <section class="screen" id="wbedit">
+    <div class="app-head"><span class="back" onclick="go('wshelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl" id="wbTitle">世界书</span>
+      <span class="tool" onclick="go('wbnew')">新增条目</span>
+    </div>
+    <div class="scroll">
+      <div class="field" style="margin:0 0 12px"><input id="wbSearch" placeholder="搜索条目 · 名称 / 内容，模糊匹配"></div>
+      <div class="sub" style="margin:0 2px 12px;font-family:var(--song);font-size:10.5px;letter-spacing:.06em;color:var(--text-3)">启用的词条会全量拼进写作模板。频繁开关会反复清缓存，想清楚再动。</div>
+      <div id="wblist"></div>
+    </div>
+  </section>
+
+  <!-- 表单：开头编辑 -->
+  <section class="screen" id="openedit">
+    <div class="app-head"><span class="back" onclick="go('wshelf')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl">开头 · 落潮的雨夜</span>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div class="field"><label>名称</label><input value="落潮的雨夜"></div>
+        <div class="field"><label>场景文本 · 开场画面 · 96 / 4000</label><textarea style="width:100%;min-height:90px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none">雨夜的便利店屋檐下，两把没撑开的伞。关东煮的热气糊住了玻璃。</textarea></div>
+      </div>
+      <div class="k" style="margin:14px 2px 10px">背 景 · 此 刻 的 局 面</div>
+      <div class="card">
+        <div class="field"><label>背景 · 53 / 4000</label><textarea style="width:100%;min-height:96px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none">两人尚未相识。小满刚到汐州实习，沈聿守店第三年。梅雨第四十一天，台风「白鸦」逼近。雨停之前，总得有一个人先开口。</textarea></div>
+      </div>
+      <div class="card"><h4>引用<span class="src jade" style="margin-left:auto">快照</span></h4><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><span class="src jade" style="padding:2px 9px;font-size:10px">汐州世界书</span><span class="src plum" style="padding:2px 9px;font-size:10px">满 小满</span><span class="src plum" style="padding:2px 9px;font-size:10px">聿 沈聿</span></div></div>
+      <div style="margin-top:14px"><button class="btn">保存</button><span class="ghost" style="margin-left:8px">另存为副本</span></div>
+    </div>
+  </section>
+
+  <!-- 表单：记忆管理 -->
+  <section class="screen" id="memedit">
+    <div class="app-head"><span class="back" onclick="go('chardetail')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl">小满的记忆 · 32 条</span>
+    </div>
+    <div class="scroll">
+      <div class="filters" style="margin-bottom:12px"><span class="fchip on">全部</span><span class="fchip">写作</span><span class="fchip">聊天</span><span class="fchip">阅读</span><span class="fchip">直播</span><span class="fchip">浮生记</span></div>
+      <div class="card" style="border-left:2px solid var(--amber)">
+        <div class="field"><label>索引行 · 恒注入</label><input value="第十一章 · 天台的未接来电"></div>
+        <div class="field"><label>详情 · 按相关性展开 · 61 / 1000</label><textarea style="width:100%;min-height:80px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none">我在天台躲雨的时候收到了未接来电提示，是沈聿打来的。只响了半声。我盯着看了很久，心情意外地好。</textarea></div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><span class="src amber" style="padding:2px 9px;font-size:10px">写作 · 落潮之城 第 11 章</span><span class="src" style="padding:2px 9px;font-size:10px">人格 · 主</span></div>
+        <div style="margin-top:12px"><button class="btn">保存</button><span class="ghost" style="margin-left:8px;color:var(--danger)" onclick="this.style.display='none';this.nextElementSibling.style.display='inline-block'">删除</span><span class="ghost" style="margin-left:8px;display:none;color:#fff;background:var(--danger);border-color:transparent">确认删除？</span></div>
+      </div>
+      <div class="mem"><div class="idx">和作者聊过「怕不怕打雷」<span class="src amber">聊天</span></div></div>
+      <div class="mem"><div class="idx">直播玩《雾港旅人》至第三节<span class="src amber">直播</span></div></div>
+    </div>
+  </section>
+
+  <!-- 表单：侧写编辑 -->
+  <section class="screen" id="profileedit">
+    <div class="app-head"><span class="back" onclick="goPrev('chardetail')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ttl">小满 · 侧写</span>
+    </div>
+    <div class="scroll">
+      <div class="seg" style="margin-bottom:14px"><div>本我</div><div class="on">落潮之城</div></div>
+      <div class="card">
+        <div class="field"><label>侧写内容 · 44 / 1000</label><textarea style="width:100%;min-height:120px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none">在汐州实习的第一年。未接来电之后心绪不宁，开始留意唱片店的营业时间。</textarea></div>
+        <div style="margin-top:12px"><button class="btn">保存</button></div>
+      </div>
+      <div class="sub" style="margin-top:10px;font-family:var(--song);font-size:11px;letter-spacing:.06em;color:var(--text-3)">本我跨书共用；侧写随各书剧情自动生长，也随你手改。</div>
+    </div>
+  </section>
+
+
+  <!-- 表单：新建书中人 -->
+  <section class="screen" id="newchar">
+    <div class="app-head"><span class="back" onclick="go('contacts')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      新建书中人
+    </div>
+    <div class="scroll">
+      <div class="card" style="display:flex;align-items:center;gap:14px">
+        <span class="avatar" style="width:52px;height:52px;font-size:22px;border-radius:13px;color:var(--text-3);border-style:dashed">？</span>
+        <div style="flex:1"><div class="sub" style="margin:0">上传图片拖框截取，或导入酒馆卡自动取立绘。</div><div style="margin-top:9px"><span class="ghost" style="padding:4px 12px" onclick="go('crop')">设置形象</span><span class="ghost" style="padding:4px 12px;margin-left:7px">导入人物卡</span></div></div>
+      </div>
+      <div class="card">
+        <div class="field" style="margin-top:0"><label>名字</label><input placeholder="比如：阿岸"></div>
+        <div class="field"><label>性别</label><div class="seg" style="margin-top:2px"><div class="on">女</div><div>男</div></div></div>
+        <div class="field"><label>本我 · 通用设定 · 0 / 1000</label><textarea style="width:100%;min-height:90px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none" placeholder="TA 是谁，最不可动摇的底色…"></textarea></div>
+        <div style="margin-top:9px"><span class="ghost" style="color:var(--jade);border-color:color-mix(in srgb,var(--jade) 40%,transparent)">按《落潮之城》剧情自动总结设定</span><div class="sub" style="margin-top:7px;font-size:10.5px;color:var(--text-3)">这个按钮只在从写作设定库进来时出现；在书中人 APP 里新建没有它。</div></div>
+        <div class="field"><label>本书初始侧写 · 0 / 1000 · 从写作进来时自动加入本书</label><textarea style="width:100%;min-height:66px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none" placeholder="TA 在这本书里此刻的处境…"></textarea></div>
+        <div style="margin-top:12px"><button class="btn" onclick="go('contacts')">保存</button><span class="ghost" style="margin-left:8px" onclick="go('contacts')">取消</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 表单：新增世界书条目 -->
+  <section class="screen" id="wbnew">
+    <div class="app-head"><span class="back" onclick="go('wbedit')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      新增条目
+      <span class="spacer"></span>
+      <span class="note">世界书 · 汐州</span>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div class="field" style="margin-top:0"><label>条目名</label><input id="wbnName" placeholder="比如：气象台顶楼"></div>
+        <div class="field"><label>状态</label><div class="seg" id="wbnOn" style="margin-top:2px"><div class="on" onclick="WB.segPick(this)">启用 · 拼入模板</div><div onclick="WB.segPick(this)">停用</div></div></div>
+        <div class="field"><label>内容 · 上限 2000</label><textarea id="wbnText" style="width:100%;min-height:110px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-3);padding:11px 13px;font-family:var(--song);font-size:13px;line-height:1.9;color:var(--text);outline:none;resize:none" placeholder="写下这条设定…"></textarea></div>
+        <div style="margin-top:12px"><button class="btn" onclick="WB.addFromForm()">保存</button><span class="ghost" style="margin-left:8px" onclick="go('wbedit')">取消</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════ 问津（帮助） ════════ -->
+  <section class="screen" id="help">
+    <div class="app-head"><span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      问津
+      <span class="spacer"></span>
+      <span class="note">帮助 · 不产生记忆</span>
+    </div>
+    <div class="scroll" style="padding-bottom:110px">
+      <div class="k" style="margin:2px 2px 10px">手 册</div>
+      <div class="mem"><div class="idx">快速上手 · 三分钟配好 API<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="mem"><div class="idx">写作 · 墨量与回溯<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="mem"><div class="idx">浮生记 · 封面与发帖<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="mem"><div class="idx">直播与话本<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="mem"><div class="idx">记忆与人格<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="mem"><div class="idx">备份与云同步<span style="margin-left:auto;color:var(--text-3)">›</span></div></div>
+      <div class="k" style="margin:18px 2px 12px">问 助 手</div>
+      <div class="bubble-row me"><div class="msg">回溯会把正文删掉吗？</div></div>
+      <div class="bubble-row"><span class="avatar" style="background:var(--panel-2);color:var(--text-2)">津</span><div class="msg">会。回溯到某条指令后，它之后的正文与指令都会删除，只能去「日志」找回。详见手册「写作 · 墨量与回溯」。</div></div>
+      <div class="sub" style="font-family:var(--song);font-size:10.5px;letter-spacing:.06em;color:var(--text-3)">助手只读帮助文档（注入不超过 100 条），走生文主力 API，不产生记忆。</div>
+    </div>
+    <div class="inputbar pane">
+      <input placeholder="问点什么…"/>
+      <button class="send">问</button>
+    </div>
+  </section>
+
+  <!-- ════════ 音乐 ════════ -->
+  <section class="screen" id="music">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      音乐
+      <span class="spacer"></span>
+      <span class="note">网易云 · 已扫码登录</span>
+    </div>
+    <div class="scroll">
+      <div class="album"><div class="vinyl"></div></div>
+      <div class="mtitle">落潮电台</div>
+      <div class="martist">汐州民谣组 · 《港口城市志》</div>
+      <div class="lyrics">
+        <div>雨停的时候你别说话</div>
+        <div class="cur">整座城市都在换气</div>
+        <div>信箱里住着没寄出的夏天</div>
+      </div>
+      <div class="mprog"><span>02:14</span><div class="bar"><i></i></div><span>04:37</span></div>
+      <div class="mctls">
+        <div class="mctl"><svg width="16" height="16" viewBox="0 0 17 17"><path d="M11.5 3.5 L6 8.5 l5.5 5 M5 3.5 v10"/></svg></div>
+        <div class="mctl play"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M6.5 4 v10 M11.5 4 v10"/></svg></div>
+        <div class="mctl"><svg width="16" height="16" viewBox="0 0 17 17"><path d="M5.5 3.5 L11 8.5 l-5.5 5 M12 3.5 v10"/></svg></div>
+      </div>
+      <div class="card" style="margin-top:22px">
+        <div class="k" style="margin-bottom:6px">搜索 · 歌单 · 歌词</div>
+        <div class="sub" style="margin:0">未登录时这里显示二维码，用网易云 App 扫一下即可。搜歌、拉歌词、读播放进度都走你自己的账号。写作时歌词会出现在灵动岛下方。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 装帧 ════════ -->
+  <section class="screen" id="binding">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      装帧
+      <span class="spacer"></span>
+      <span class="note">给这台手机换一身书衣</span>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div class="k" style="margin-bottom:2px">昼夜</div>
+        <div class="seg">
+          <div id="segLight" onclick="setTheme('light')">浅色 · 纸</div>
+          <div id="segDark" class="on" onclick="setTheme('dark')">深色 · 墨</div>
+        </div>
+      </div>
+      <div id="palDark">
+      <div class="k" style="margin:18px 2px 10px">深 色 装 帧</div>
+      <div class="card" id="palMo" onclick="applyPal('palMo','dark','')">
+        <h4>夜书房 · 墨量<span class="src palchip jade" style="margin-left:auto">当前</span></h4>
+        <div class="sub">竹青主事，琥珀记旧，藕色说话。写作台的原配。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#7FB8A4"></i><i style="flex:1;height:7px;border-radius:2px;background:#D9A65C"></i><i style="flex:1;height:7px;border-radius:2px;background:#9A7B94"></i><i style="flex:1;height:7px;border-radius:2px;background:#161A20;border:1px solid rgba(255,255,255,.15)"></i></div>
+      </div>
+      <div class="card" id="palHeijin" onclick="applyPal('palHeijin','dark','heijin')">
+        <h4>乌金 · 描金笺<span class="src palchip" style="margin-left:auto">启用</span></h4>
+        <div class="sub">纯黑做底，泥金题字，赭铜与青灰伴读。黑金就是黑金。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#C9A55C"></i><i style="flex:1;height:7px;border-radius:2px;background:#A66B3F"></i><i style="flex:1;height:7px;border-radius:2px;background:#7F8E93"></i><i style="flex:1;height:7px;border-radius:2px;background:#0A0908;border:1px solid rgba(255,255,255,.15)"></i></div>
+      </div>
+      <div class="card" id="palSongyan" onclick="applyPal('palSongyan','dark','songyan')">
+        <h4>雪夜 · 松烟<span class="src palchip" style="margin-left:auto">启用</span></h4>
+        <div class="sub">青灰做主，冷金提亮，烟紫收声。落雪天写稿用。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#8FB3C7"></i><i style="flex:1;height:7px;border-radius:2px;background:#C7B37F"></i><i style="flex:1;height:7px;border-radius:2px;background:#A08FB3"></i><i style="flex:1;height:7px;border-radius:2px;background:#0C1017;border:1px solid rgba(255,255,255,.15)"></i></div>
+      </div>
+      </div>
+      <div id="palLight" style="display:none">
+      <div class="k" style="margin:18px 2px 10px">浅 色 装 帧</div>
+      <div class="card" id="palZhi" onclick="applyPal('palZhi','light','')">
+        <h4>纸页 · 原配<span class="src palchip" style="margin-left:auto">启用</span></h4>
+        <div class="sub">暖纸底，墨字，三色沉一档。白天的夜书房。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#3E7F68"></i><i style="flex:1;height:7px;border-radius:2px;background:#A9762B"></i><i style="flex:1;height:7px;border-radius:2px;background:#7A5A73"></i><i style="flex:1;height:7px;border-radius:2px;background:#EFEDE8;border:1px solid rgba(0,0,0,.12)"></i></div>
+      </div>
+      <div class="card" id="palTaofen" onclick="applyPal('palTaofen','light','taofen')">
+        <h4>桃粉 · 春信<span class="src palchip" style="margin-left:auto">启用</span></h4>
+        <div class="sub">桃色主笔，抹一点叶绿，梅紫收尾。像三月寄来的信。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#C46E86"></i><i style="flex:1;height:7px;border-radius:2px;background:#5F8F72"></i><i style="flex:1;height:7px;border-radius:2px;background:#A87E93"></i><i style="flex:1;height:7px;border-radius:2px;background:#F6EBEC;border:1px solid rgba(0,0,0,.1)"></i></div>
+      </div>
+      <div class="card" id="palQingci" onclick="applyPal('palQingci','light','qingci')">
+        <h4>青瓷 · 雨过<span class="src palchip" style="margin-left:auto">启用</span></h4>
+        <div class="sub">釉色青绿为主，米金与黛紫作陪。雨过天青云破处。</div>
+        <div style="display:flex;gap:5px;margin-top:11px"><i style="flex:1;height:7px;border-radius:2px;background:#4E8E80"></i><i style="flex:1;height:7px;border-radius:2px;background:#B29455"></i><i style="flex:1;height:7px;border-radius:2px;background:#7D7296"></i><i style="flex:1;height:7px;border-radius:2px;background:#EDF1EE;border:1px solid rgba(0,0,0,.1)"></i></div>
+      </div>
+      </div>
+      <div class="card" style="border-style:dashed;background:none;text-align:center" onclick="go('palcustom')"><div class="sub" style="margin:0">＋ 自定义装帧 · 自己调三色与底色，可导出</div></div>
+      <div class="sub" style="text-align:center;margin-top:16px;font-family:var(--song);font-size:12px;letter-spacing:.1em;color:var(--text-3)">只换颜色，不换布局。三色各司其职，何种装帧都不改。</div>
+    </div>
+  </section>
+
+  <!-- 装帧：自定义 -->
+  <section class="screen" id="palcustom">
+    <div class="app-head">
+      <span class="back" onclick="go('binding')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      自定义装帧
+      <span class="spacer"></span>
+      <span class="tool">导出配置</span>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div style="display:flex;gap:18px;flex-wrap:wrap">
+          <div style="text-align:center"><input type="color" value="#7FB8A4"><div class="k" style="margin-top:7px">主色</div></div>
+          <div style="text-align:center"><input type="color" value="#D9A65C"><div class="k" style="margin-top:7px">次色</div></div>
+          <div style="text-align:center"><input type="color" value="#9A7B94"><div class="k" style="margin-top:7px">三色</div></div>
+          <div style="text-align:center"><input type="color" value="#161A20"><div class="k" style="margin-top:7px">底色</div></div>
+        </div>
+        <div class="sub" style="margin-top:12px;font-family:var(--song);font-size:11px;letter-spacing:.06em;color:var(--text-3)">底色定了，面板与文字的深浅会自动派生，保证可读。</div>
+      </div>
+      <div class="k" style="margin:16px 2px 10px">预 览</div>
+      <div class="card">
+        <h4>预览卡片<span class="src jade" style="margin-left:auto">主色标</span></h4>
+        <div class="sub">这行是次要说明文字。<span class="src amber">记忆</span> <span class="src plum">指令</span></div>
+        <div style="margin-top:11px"><button class="btn">主按钮</button><span class="ghost" style="margin-left:8px">幽灵按钮</span></div>
+        <div class="bubble-row me" style="margin:14px 0 0"><div class="msg">我方气泡用主色。</div></div>
+      </div>
+      <div style="margin-top:14px"><button class="btn">保存为我的装帧</button><span class="ghost" style="margin-left:9px">重置</span></div>
+    </div>
+  </section>
+
+  <!-- ════════ 设置 ════════ -->
+  <section class="screen" id="settings">
+    <div class="app-head">
+      <span class="back" onclick="go('home')"><svg width="9" height="16" viewBox="0 0 10 17"><path d="M8.5 1.5 L2 8.5 l6.5 7" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      设置
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div class="api-head"><h4>生文 · 主力</h4><span class="test" data-prof="main" style="margin-right:12px;color:var(--text-2)">方案</span><span class="test" data-test="main">测试连接</span></div>
+        <div class="field"><label>BASE URL</label><input class="mono" placeholder="https://api.example.com/v1" data-k="main.base"></div>
+        <div class="field"><label>API KEY</label><input type="password" class="mono" placeholder="sk-…" data-k="main.key"></div>
+        <div class="field"><label>模型 · 用于写正文和聊天<span class="lact" data-mact="main">取列表</span></label><input class="mono" placeholder="model id" data-k="main.model"></div>
+        <div class="field"><label>上下文窗口 · TOKENS</label><input value="200000" data-k="main.ctx"></div>
+        <div class="field"><label>思考模式 · 个别服务商不认此参数，报错就改回自动</label><div class="seg" data-think="main" style="margin-top:2px"><div class="on">自动</div><div>开</div><div>关</div></div></div>
+        <div class="field"><label>附加参数 · JSON · 高级，原样并入请求</label><input class="mono" placeholder='{"temperature":0.8}' data-k="main.extra"></div>
+      </div>
+      <div class="card">
+        <div class="api-head"><h4>生文 · 轻量</h4><span class="test" data-prof="light" style="margin-right:12px;color:var(--text-2)">方案</span><span class="test" data-test="light">测试连接</span></div>
+        <div class="field"><label>BASE URL</label><input class="mono" placeholder="https://api.example.com/v1" data-k="light.base"></div>
+        <div class="field"><label>API KEY</label><input type="password" class="mono" placeholder="sk-…" data-k="light.key"></div>
+        <div class="field"><label>模型 · 用于发帖、总结、弹幕<span class="lact" data-mact="light">取列表</span></label><input class="mono" placeholder="model id" data-k="light.model"></div>
+        <div class="field"><label>上下文窗口 · TOKENS</label><input value="200000" data-k="light.ctx"></div>
+        <div class="field"><label>思考模式 · 个别服务商不认此参数，报错就改回自动</label><div class="seg" data-think="light" style="margin-top:2px"><div class="on">自动</div><div>开</div><div>关</div></div></div>
+        <div class="field"><label>附加参数 · JSON · 高级，原样并入请求</label><input class="mono" placeholder='{"temperature":0.8}' data-k="light.extra"></div>
+      </div>
+      <div class="card">
+        <div class="api-head"><h4>生图</h4><span class="test" data-prof="img" style="margin-right:12px;color:var(--text-2)">方案</span><span class="test" data-test="img">测试连接</span></div>
+        <div class="field"><label>BASE URL · 留空则关闭生图封面和周边广告</label><input class="mono" placeholder="https://…" data-k="img.base"></div>
+        <div class="field"><label>API KEY</label><input type="password" class="mono" placeholder="sk-…" data-k="img.key"></div>
+        <div class="field"><label>模型<span class="lact" data-mact="img">取列表</span></label><input class="mono" placeholder="model id" data-k="img.model"></div>
+      </div>
+      <div class="card">
+        <div class="api-head"><h4>转语音</h4><span class="test" data-prof="tts" style="margin-right:12px;color:var(--text-2)">方案</span><span class="test" data-test="tts">测试连接</span></div>
+        <div class="field"><label>BASE URL · 留空则用下方的合成语音</label><input class="mono" placeholder="https://…" data-k="tts.base"></div>
+        <div class="field"><label>API KEY</label><input type="password" class="mono" placeholder="sk-…" data-k="tts.key"></div>
+        <div class="field"><label>模型<span class="lact" data-mact="tts">取列表</span></label><input class="mono" placeholder="model id" data-k="tts.model"></div>
+      </div>
+      <div class="card">
+        <div class="k" style="margin-bottom:4px">合成语音</div>
+        <div class="sub" style="margin:0">没接转语音时，直播用逐字嘟嘟声念台词（字幕常驻）。每个角色的音色——合成音的波形、音高、密度，以及 TTS 专属音色——都在「书中人」各自的档案页里调。</div>
+      </div>
+      <div class="card">
+        <div class="k" style="margin-bottom:4px">任务队列</div>
+        <div class="sub" style="margin:0">边缘小把手开关。关掉也能在这里看队列。</div>
+        <div class="seg" style="max-width:160px"><div class="on" onclick="qtoggle(true,this)">开</div><div onclick="qtoggle(false,this)">关</div></div>
+        <div style="margin-top:14px">
+          <div class="qrow"><div class="top">正文 · 第十二章<span class="src jade">主力</span><span class="st on">生成中 62%</span></div><div class="pbar"><i style="width:62%"></i></div></div>
+          <div class="qrow"><div class="top">浮生记 · 补池 ×6<span class="src amber">轻量</span><span class="st">排队中</span></div><div class="pbar"><i style="width:0"></i></div></div>
+          <div class="qrow" style="margin-bottom:0"><div class="top">周边广告图 ×2<span class="src">生图</span><span class="st" style="color:var(--danger)">失败 · 429</span></div><div class="pbar"><i style="width:0"></i></div></div>
+        </div>
+        <div style="margin-top:12px"><span class="ghost" onclick="go('log')">查看请求日志</span></div>
+      </div>
+      <div class="card">
+        <div class="k" style="margin-bottom:8px">数据</div>
+        <div class="sub" style="margin:0 0 10px">全部数据都存在本机浏览器里。iOS 网页七天不打开可能被系统清空，建议「添加到主屏幕」使用。</div>
+        <div class="field"><label>浮生记 · 池内保留条数（点赞的进「我的赞」永久保留）</label><input value="500" data-k="pool.posts"></div>
+        <div class="field"><label>直播回放 · 只存脚本字幕不存语音 · 保留场数</label><input value="20" data-k="pool.replays"></div>
+        <div style="margin-top:14px"><button class="btn" onclick="backupExport()">完整备份</button><span class="ghost" style="margin-left:8px" onclick="document.getElementById('backupFile').click()">导入备份</span><input type="file" id="backupFile" accept="application/json" style="display:none" onchange="backupImport(this.files[0]);this.value=''"></div>
+        <div class="sub" style="margin-top:10px;color:var(--amber)">完整备份含 API Key 配置，外流可能导致 Key 被盗刷，请自己保管。</div>
+        <div class="sub" style="margin-top:12px">分享导出（不含 Key）在各自页面：人设卡、世界书在设定库和素材库，小说正文在写作书架。</div>
+      </div>
+      <div class="card">
+        <div class="k" style="margin-bottom:6px">云同步 · GITHUB</div>
+        <div class="sub" style="margin:0">用你自己的 GitHub 私有仓库当云盘，三步配好：<br>一、点下面按钮去 GitHub 新建<b style="color:var(--text)">私有</b>仓库，名字随意（建议 mantou-backup）。<br>二、在 GitHub 的 Settings → Developer settings → Tokens 里生成一个勾了 repo 权限的 Token，复制。<br>三、粘贴到下框。存档含 API Key，仓库务必设为私有。</div>
+        <div style="margin-top:12px"><span class="ghost">去 GitHub 建仓库</span><span class="ghost" style="margin-left:8px">怎么拿 Token？</span></div>
+        <div class="field"><label>GITHUB TOKEN</label><input type="password" placeholder="ghp_…" data-k="sync.token"></div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <button class="btn">上传 · 仅文字</button>
+          <span class="ghost">上传 · 含图片</span>
+          <span class="ghost">从云端拉取</span>
+        </div>
+        <div class="note" style="margin-top:10px;font-size:10.5px;color:var(--text-3)">上次同步 · 尚未配置</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 全局任务队列把手 + 面板 -->
+  <div class="qbub show" id="qbub" onclick="document.getElementById('qpanel').classList.add('show')">
+    <span class="n">3</span><span class="k2">任务</span>
+  </div>
+  <div class="sheet" id="qpanel" style="top:42%">
+    <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+    <h3>任务队列</h3>
+    <div class="note">按提交顺序排队 · 主力 / 轻量各走一条通道</div>
+    <div style="overflow-y:auto;flex:1">
+      <div class="qrow"><div class="top">正文 · 第十二章<span class="src jade">主力</span><span class="st on">生成中 62%</span></div><div class="pbar"><i style="width:62%"></i></div></div>
+      <div class="qrow"><div class="top">浮生记 · 补池 ×6<span class="src amber">轻量</span><span class="st">排队中</span></div><div class="pbar"><i style="width:0"></i></div></div>
+      <div class="qrow"><div class="top">前情摘要 · 第九章<span class="src amber">轻量</span><span class="st">排队中</span></div><div class="pbar"><i style="width:0"></i></div></div>
+      <div class="qrow" style="border-left:2px solid var(--danger)"><div class="top">周边广告图 ×2<span class="src">生图</span><span class="st" style="color:var(--danger)">失败 · 429 限流</span></div><div class="pbar"><i style="width:0"></i></div><div style="margin-top:9px"><span class="ghost" style="padding:3px 11px">重试</span><span class="ghost" style="padding:3px 11px;margin-left:6px">复制报错</span></div></div>
+    </div>
+  </div>
+
+  <!-- 设置：模型列表 / 通道方案 -->
+  <div class="sheet auto" id="modelsheet">
+    <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+    <h3>选择模型</h3>
+    <div class="note">从服务商拉取的可用模型，点一个即填入；带窗口信息的会顺手帮你填上上下文窗口。</div>
+    <div class="field" style="margin:0 0 10px"><input id="modelsearch" placeholder="搜索模型 · 三百条也不怕"></div>
+    <div style="overflow-y:auto;flex:1" id="modellist"></div>
+  </div>
+  <div class="sheet auto" id="profsheet">
+    <div class="grab" onclick="this.parentElement.classList.remove('show')"></div>
+    <h3>通道方案</h3>
+    <div class="note">同一通道可存多套服务商配置——平台一用完了，一键切平台二。</div>
+    <div style="overflow-y:auto;flex:1" id="proflist"></div>
+    <div class="inputbar pane" style="position:static;margin-top:12px;flex-shrink:0">
+      <span class="who">另存</span>
+      <input id="profname" placeholder="给当前配置起个名，如 深度求索">
+      <button class="send" onclick="Settings.saveProfile()">保存</button>
+    </div>
+  </div>
+  <!-- 全局直播小窗 -->
+  <div class="pip" id="pip">
+    <div class="pv" onclick="go('live'); togglePip(false)"><span style="font-family:var(--song);font-size:11.5px;letter-spacing:.14em;color:#C9C4B8;text-align:center;line-height:1.9">雾港<br>旅人</span></div>
+    <div class="bar"><span class="live-dot"></span>直播中<span class="x" onclick="togglePip(false)">✕</span></div>
+  </div>
+</div>
+
+<script src="js/shell.js?v=20260818k"></script>
+<script src="js/db.js?v=20260818k"></script>
+<script src="js/api.js?v=20260818k"></script>
+<script src="js/settings.js?v=20260818k"></script>
+<script src="js/wb.js?v=20260818k"></script>
+<script src="js/openings.js?v=20260818k"></script>
+<script src="js/writing.js?v=20260818k"></script>
+</body>
+</html>

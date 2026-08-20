@@ -1,0 +1,67 @@
+/* 夜书房 · 设计令牌与四套配色(装帧换肤两条轴都在这) */
+  /* ═══════ 夜书房 · 墨量 —— 设计令牌（承自 writing-desk/src/tokens.css）═══════ */
+  :root{
+    --bg:#0F1216; --panel:#161A20; --panel-2:#1C2128; --panel-3:#0B0E12;
+    --line:rgba(230,226,216,.10);
+    --text:#E7E2D6; --text-2:#9AA0A8; --text-3:#666D77;
+    --jade:#7FB8A4; --amber:#D9A65C; --plum:#9A7B94;
+    --on-jade:#0E1512;
+    --glass:rgba(22,26,32,.78); --glass-2:rgba(28,33,40,.72);
+    --danger:#C0554D;
+    --wall-hi:rgba(255,255,255,.05); --wall-lo:rgba(0,0,0,.24);
+    --song:"Source Han Serif SC","Noto Serif SC","Songti SC","STSong",serif;
+    --sans:"PingFang SC","Hiragino Sans GB",-apple-system,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+    --r-chip:3px; --r-sm:5px; --r:8px; --r-card:10px; --r-tile:13px; --r-pill:99px;
+    --dur:120ms; --ease:cubic-bezier(.2,.6,.3,1);
+    --wash-jade:rgba(127,184,164,.07); --wash-amber:rgba(217,166,92,.05); --wash-plum:rgba(154,123,148,.06);
+  }
+  :root[data-theme="light"]{
+    --bg:#EFEDE8; --panel:#FBFAF7; --panel-2:#F3F1EC; --panel-3:#EDEBE5;
+    --line:rgba(20,24,28,.11);
+    --text:#1E2227; --text-2:#5B626B; --text-3:#8E959D;
+    --jade:#3E7F68; --amber:#A9762B; --plum:#7A5A73;
+    --on-jade:#FBFAF7;
+    --glass:rgba(251,250,247,.8); --glass-2:rgba(243,241,236,.75);
+    --danger:#A8342A;
+    --wall-hi:rgba(255,255,255,.55); --wall-lo:rgba(30,34,39,.08);
+    --wash-jade:rgba(62,127,104,.06); --wash-amber:rgba(169,118,43,.05); --wash-plum:rgba(122,90,115,.05);
+  }
+
+  /* ── 配色套系(装帧一键换,昼夜各有候补) ── */
+  :root[data-palette="heijin"]{
+    --bg:#0A0908; --panel:#131110; --panel-2:#1A1714; --panel-3:#070605;
+    --line:rgba(230,214,178,.12);
+    --text:#EAE0C8; --text-2:#A69B84; --text-3:#6E665A;
+    --jade:#C9A55C; --amber:#A66B3F; --plum:#7F8E93;
+    --on-jade:#141005;
+    --glass:rgba(19,17,16,.78); --glass-2:rgba(26,23,20,.72); --glass-strong:rgba(20,18,16,.94);
+    --wash-jade:rgba(201,165,92,.07); --wash-amber:rgba(166,107,63,.05); --wash-plum:rgba(127,142,147,.05);
+  }
+  :root[data-palette="songyan"]{
+    --bg:#0C1017; --panel:#121826; --panel-2:#182134; --panel-3:#080B12;
+    --line:rgba(214,226,238,.10);
+    --text:#E4E9EF; --text-2:#93A0AE; --text-3:#5E6B7A;
+    --jade:#8FB3C7; --amber:#C7B37F; --plum:#A08FB3;
+    --on-jade:#0C1218;
+    --glass:rgba(18,24,38,.78); --glass-2:rgba(24,33,52,.72); --glass-strong:rgba(18,24,37,.94);
+    --wash-jade:rgba(143,179,199,.07); --wash-amber:rgba(199,179,127,.05); --wash-plum:rgba(160,143,179,.05);
+  }
+  :root[data-palette="taofen"]{
+    --bg:#F7EFF0; --panel:#FCF7F6; --panel-2:#F5EBEA; --panel-3:#F1E5E4;
+    --line:rgba(44,62,53,.14);
+    --text:#2C3E35; --text-2:#5F7268; --text-3:#8CA094;
+    --jade:#C46E86; --amber:#5F8F72; --plum:#A87E93;
+    --on-jade:#FDF8F7;
+    --glass:rgba(252,247,246,.8); --glass-2:rgba(245,235,234,.75); --glass-strong:rgba(252,247,246,.95);
+    --wash-jade:rgba(196,110,134,.07); --wash-amber:rgba(95,143,114,.05); --wash-plum:rgba(168,126,147,.05);
+  }
+  :root[data-palette="qingci"]{
+    --bg:#EDF1EE; --panel:#F8FAF7; --panel-2:#ECF2ED; --panel-3:#E5ECE6;
+    --line:rgba(24,40,36,.12);
+    --text:#1F2A27; --text-2:#5B6E68; --text-3:#8B9C95;
+    --jade:#4E8E80; --amber:#B29455; --plum:#7D7296;
+    --on-jade:#F7FAF8;
+    --glass:rgba(248,250,247,.8); --glass-2:rgba(236,242,237,.75); --glass-strong:rgba(247,250,248,.95);
+    --wash-jade:rgba(78,142,128,.06); --wash-amber:rgba(178,148,85,.05); --wash-plum:rgba(125,114,150,.05);
+  }
