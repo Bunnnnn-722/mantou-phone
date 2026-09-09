@@ -1,0 +1,137 @@
+/* 夜书房 · 设计令牌与四套配色(装帧换肤两条轴都在这) */
+  /* ═══════ 夜书房 · 墨量 —— 设计令牌（承自 writing-desk/src/tokens.css）═══════ */
+  :root{
+    --bg:#0F1216; --panel:#161A20; --panel-2:#1C2128; --panel-3:#0B0E12;
+    --line:rgba(230,226,216,.10);
+    --text:#E7E2D6; --text-2:#9AA0A8; --text-3:#666D77;
+    --jade:#7FB8A4; --amber:#D9A65C; --plum:#9A7B94;
+    --star:color-mix(in srgb,var(--amber) 72%,var(--text-3)); /* 收藏星：比琥珀柔一档，各装帧可自行覆盖 */
+    --on-jade:#0E1512;
+    --glass:rgba(22,26,32,.78); --glass-2:rgba(28,33,40,.72);
+    --danger:#C0554D;
+    --wall-hi:rgba(255,255,255,.05); --wall-lo:rgba(0,0,0,.24);
+    /* 安全区单一来源:全机只引用这两个变量,别再各处手写 env() */
+    --safe-top:max(env(safe-area-inset-top,0px),var(--sa-top-js,0px)); /* 原生 env 与 JS 探测取大:iOS 全屏 web app 下 env 会谎报 0 */
+    --safe-bottom:env(safe-area-inset-bottom,0px);
+    --song:"Source Han Serif SC","Noto Serif SC","Songti SC","STSong",serif;
+    --sans:"PingFang SC","Hiragino Sans GB",-apple-system,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+    --r-chip:3px; --r-sm:5px; --r:8px; --r-card:10px; --r-tile:13px; --r-pill:99px;
+    --dur:120ms; --ease:cubic-bezier(.2,.6,.3,1);
+    --wash-jade:rgba(127,184,164,.07); --wash-amber:rgba(217,166,92,.05); --wash-plum:rgba(154,123,148,.06);
+  }
+  :root[data-theme="light"]{
+    --bg:#EFEDE8; --panel:#FBFAF7; --panel-2:#F3F1EC; --panel-3:#EDEBE5;
+    --line:rgba(20,24,28,.11);
+    --text:#1E2227; --text-2:#5B626B; --text-3:#8E959D;
+    --jade:#3E7F68; --amber:#A9762B; --plum:#7A5A73;
+    --on-jade:#FBFAF7;
+    --glass:rgba(251,250,247,.8); --glass-2:rgba(243,241,236,.75);
+    --danger:#A8342A;
+    --wall-hi:rgba(255,255,255,.55); --wall-lo:rgba(30,34,39,.08);
+    --wash-jade:rgba(62,127,104,.06); --wash-amber:rgba(169,118,43,.05); --wash-plum:rgba(122,90,115,.05);
+  }
+
+  /* ── 配色套系(装帧一键换,昼夜各有候补) ── */
+  :root[data-palette="heijin"]{
+    --bg:#0A0908; --panel:#131110; --panel-2:#1A1714; --panel-3:#070605;
+    --line:rgba(230,214,178,.12);
+    --text:#EAE0C8; --text-2:#A69B84; --text-3:#6E665A;
+    --jade:#C9A55C; --amber:#A66B3F; --plum:#7F8E93;
+    --on-jade:#141005;
+    --glass:rgba(19,17,16,.78); --glass-2:rgba(26,23,20,.72); --glass-strong:rgba(20,18,16,.94);
+    --wash-jade:rgba(201,165,92,.07); --wash-amber:rgba(166,107,63,.05); --wash-plum:rgba(127,142,147,.05);
+  }
+  :root[data-palette="songyan"]{
+    --bg:#0C1017; --panel:#121826; --panel-2:#182134; --panel-3:#080B12;
+    --line:rgba(214,226,238,.10);
+    --text:#E4E9EF; --text-2:#93A0AE; --text-3:#5E6B7A;
+    --jade:#8FB3C7; --amber:#C7B37F; --plum:#A08FB3;
+    --on-jade:#0C1218;
+    --glass:rgba(18,24,38,.78); --glass-2:rgba(24,33,52,.72); --glass-strong:rgba(18,24,37,.94);
+    --wash-jade:rgba(143,179,199,.07); --wash-amber:rgba(199,179,127,.05); --wash-plum:rgba(160,143,179,.05);
+  }
+  :root[data-palette="xingkong"]{ /* 星空 · 漫游星际:海军蓝底,星紫主事,暖星金记旧,夜蓝说话;壁纸层由 js/sky.js 画真星空 */
+    --bg:#070B18; --panel:#11182B; --panel-2:#192239; --panel-3:#050811;
+    --line:rgba(195,208,237,.13);
+    --text:#E6EAFF; --text-2:#B4BED8; --text-3:#6F7A99;
+    --jade:#B8B8FF; --amber:#D8C48E; --plum:#7F9DD4; --star:#B5A77E; /* 星空下收藏星压成灰金，别抢星光 */
+    --on-jade:#10172B;
+    --glass:rgba(17,24,43,.78); --glass-2:rgba(25,34,57,.72); --glass-strong:rgba(17,24,43,.94);
+    --wall-hi:rgba(255,255,255,.04); --wall-lo:rgba(0,0,0,.28);
+    --wash-jade:rgba(184,184,255,.06); --wash-amber:rgba(216,196,142,.04); --wash-plum:rgba(127,157,212,.06);
+  }
+  /* 星空装帧的字体轴:标题=朝华标题A(fonts/chaohua/chaohua.css 分包,index.html 引),正文=汇文明朝体(CDN 分包);mono 不动 */
+  :root[data-palette="xingkong"]{
+    --song:"ChaoHua Title A","朝华标题A","Huiwen-mincho","汇文明朝体","Source Han Serif SC","Noto Serif SC","Songti SC",serif;
+    --sans:"Huiwen-mincho","汇文明朝体","Source Han Serif SC","Noto Serif SC","Songti SC","PingFang SC",serif;
+    font-synthesis:none; /* 明朝体只有一个字重,别让浏览器伪加粗糊成一团 */
+  }
+  :root[data-palette="yuye"]{ /* 雨夜 · 窗上有雨:玻璃后的蓝灰雨城,雨青主事,暖灯记旧,雾紫说话;壁纸由 js/scenes.js 画雨窗 */
+    --bg:#14232F; --panel:#1B2E3C; --panel-2:#223A49; --panel-3:#0F1B25;
+    --line:rgba(217,233,240,.20);
+    --text:#F2F7FA; --text-2:#E6EEF3; --text-3:#D3DEE6; /* 雨景上灰字会和雨混在一起,次级文字一律近白,靠影子分层 */
+    --jade:#A9C8DA; --amber:#D9B48A; --plum:#B7A9C9;
+    --on-jade:#0F1B25;
+    --glass:rgba(22,41,54,.62); --glass-2:rgba(27,46,60,.55); --glass-strong:rgba(20,35,47,.94);
+    --wall-hi:rgba(255,255,255,.03); --wall-lo:rgba(0,0,0,.22);
+    --wash-jade:rgba(169,200,218,.05); --wash-amber:rgba(217,180,138,.04); --wash-plum:rgba(183,169,201,.05);
+  }
+  :root[data-palette="shenhai"]{ /* 深海 · 沉入深蓝:海面之下的焦散光柱,水青主事,沙金记旧,远洋蓝说话 */
+    --bg:#04111E; --panel:#102B3C; --panel-2:#17364A; --panel-3:#030B14;
+    --line:rgba(176,214,223,.16);
+    --text:#DEEFF2; --text-2:#A1BFC8; --text-3:#6C8A96;
+    --jade:#A6D8DE; --amber:#D9C08A; --plum:#8FA8D0;
+    --on-jade:#102D37;
+    --glass:rgba(16,43,60,.62); --glass-2:rgba(23,54,74,.55); --glass-strong:rgba(12,36,52,.94);
+    --wall-hi:rgba(255,255,255,.03); --wall-lo:rgba(0,0,0,.28);
+    --wash-jade:rgba(166,216,222,.05); --wash-amber:rgba(217,192,138,.03); --wash-plum:rgba(143,168,208,.05);
+  }
+  :root[data-palette="xueri"]{ /* 雪日 · 等一场雪:雾蓝晨光的雪窗,青灰主事,暖麦记旧,灰紫说话(浅色) */
+    --bg:#E5EFF7; --panel:#F5FAFF; --panel-2:#EDF4FA; --panel-3:#DCE7F0;
+    --line:rgba(52,77,97,.14);
+    --text:#344D61; --text-2:#526B80; --text-3:#7A90A3;
+    --jade:#54758C; --amber:#B8925A; --plum:#8C7A99;
+    --on-jade:#FFFFFF;
+    --glass:rgba(245,250,255,.72); --glass-2:rgba(237,244,250,.66); --glass-strong:rgba(245,250,255,.95);
+    --wall-hi:rgba(255,255,255,.5); --wall-lo:rgba(52,77,97,.06);
+    --wash-jade:rgba(84,117,140,.05); --wash-amber:rgba(184,146,90,.04); --wash-plum:rgba(140,122,153,.04);
+  }
+  :root[data-palette="bairimeng"]{ /* 白日梦 · 蓝白两色:像素窗口与抖动云层(浅色);直角与像素字都在这里定 */
+    --bg:#EAF4FC; --panel:#FFFFFF; --panel-2:#EDF6FF; --panel-3:#DCEBF8;
+    --line:#5EA6E5;
+    --text:#357EBC; --text-2:#3F86D0; --text-3:#5F93C7;
+    --jade:#5EA6E5; --amber:#3F86D0; --plum:#8AA0DA;
+    --on-jade:#FFFFFF;
+    --glass:rgba(255,255,255,.92); --glass-2:rgba(237,246,255,.9); --glass-strong:rgba(255,255,255,.97);
+    --wall-hi:transparent; --wall-lo:transparent;
+    --wash-jade:transparent; --wash-amber:transparent; --wash-plum:transparent;
+    --r-chip:0; --r-sm:0; --r:0; --r-card:0; --r-tile:0; --r-pill:0;
+    --song:"Fusion Pixel","Songti SC",serif; --sans:"Fusion Pixel","PingFang SC",sans-serif;
+  }
+  /* 雨夜/雪日/深海跟星空同一套字:正文汇文明朝体,标题朝华标题A */
+  :root:is([data-palette="yuye"],[data-palette="xueri"],[data-palette="shenhai"]){
+    --song:"ChaoHua Title A","朝华标题A","Huiwen-mincho","汇文明朝体","Source Han Serif SC","Noto Serif SC","Songti SC",serif;
+    --sans:"Huiwen-mincho","汇文明朝体","Source Han Serif SC","Noto Serif SC","Songti SC","PingFang SC",serif;
+    font-synthesis:none;
+  }
+  /* 白日梦的像素字:缝合像素字体 12px（TakWolf，OFL）,fonts/fusion-pixel-12.woff2 */
+  @font-face{font-family:"Fusion Pixel";src:url("../fonts/fusion-pixel-12.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+  :root[data-palette="taofen"]{
+    --bg:#F7EFF0; --panel:#FCF7F6; --panel-2:#F5EBEA; --panel-3:#F1E5E4;
+    --line:rgba(44,62,53,.14);
+    --text:#2C3E35; --text-2:#5F7268; --text-3:#8CA094;
+    --jade:#C46E86; --amber:#5F8F72; --plum:#A87E93;
+    --on-jade:#FDF8F7;
+    --glass:rgba(252,247,246,.8); --glass-2:rgba(245,235,234,.75); --glass-strong:rgba(252,247,246,.95);
+    --wash-jade:rgba(196,110,134,.07); --wash-amber:rgba(95,143,114,.05); --wash-plum:rgba(168,126,147,.05);
+  }
+  :root[data-palette="qingci"]{
+    --bg:#EDF1EE; --panel:#F8FAF7; --panel-2:#ECF2ED; --panel-3:#E5ECE6;
+    --line:rgba(24,40,36,.12);
+    --text:#1F2A27; --text-2:#5B6E68; --text-3:#8B9C95;
+    --jade:#4E8E80; --amber:#B29455; --plum:#7D7296;
+    --on-jade:#F7FAF8;
+    --glass:rgba(248,250,247,.8); --glass-2:rgba(236,242,237,.75); --glass-strong:rgba(247,250,248,.95);
+    --wash-jade:rgba(78,142,128,.06); --wash-amber:rgba(178,148,85,.05); --wash-plum:rgba(125,114,150,.05);
+  }
